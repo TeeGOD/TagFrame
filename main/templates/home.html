@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Site</title>
+</head>
+<body>
+    <h1>Characters List</h1>
+    <ul>
+        {% for framedata in framedata %}
+            <li>{{ framedata.move }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
