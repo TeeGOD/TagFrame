@@ -1,0 +1,28 @@
+*{
+ margin: 0px
+}
+
+html{
+    background: #5b4a87;
+    background: radial-gradient(circle,rgba(91, 74, 135, 1) 0%, rgba(62, 48, 94, 1) 39%, rgba(43, 13, 105, 1) 84%);
+}
+
+#charSelect{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: aliceblue;
+    height: 416px;
+}
+
+.charCard{
+    display: flex;
+    margin: 2px;
+    margin-top: 0px;
+    background-color: grey;
+    height: 127px;
+    width: 97px;
+}
+
+#charRandom{
+}
