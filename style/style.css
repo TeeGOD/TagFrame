@@ -1,5 +1,6 @@
 *{
- margin: 0px
+ margin: 0px;
+ padding: 0px;
 }
 
 html{
@@ -9,20 +10,42 @@ html{
 
 #charSelect{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    justify-content: center;
     background-color: aliceblue;
-    height: 416px;
+    height: 408px;
+    vertical-align: middle;
+}
+
+#charSelectTemplate{
+   width: 100%;
+    vertical-align: middle;
+   
+}
+
+#charSelectLeft{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 1px;
+}
+
+#charSelectRight{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 1px;
 }
 
 .charCard{
     display: flex;
-    margin: 2px;
-    margin-top: 0px;
+    flex-direction: row;
+    flex-wrap: wrap;
     background-color: grey;
-    height: 127px;
-    width: 97px;
+    height: 115px;
+    width: 75px;
 }
 
 #charRandom{
+    margin: 0px;
+    padding: 0px;
 }
