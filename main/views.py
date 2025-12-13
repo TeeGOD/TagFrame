@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import FrameData
+from .models import FrameData, Characters
 
 def parse_move(move_str):
     """
@@ -69,10 +69,11 @@ def parse_move(move_str):
 
 def home(request):
     character = request.GET.get("character")
+    character_list = Characters.objects.all()
     framedata = FrameData.objects.filter(character__name=character)
 
     moves_list = []
     for move in framedata:
         moves_list.append(parse_move(move.move))  # append list of keys
 
-    return render(request, "home.html", {"moves_list": moves_list}, character=character)
+    return render(request, "index.html", {"moves_list": moves_list, "characters" : character_list})

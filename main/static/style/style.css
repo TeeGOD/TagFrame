@@ -3,23 +3,22 @@
  padding: 0px;
 }
 
-html{
-    background: #5b4a87;
-    background: radial-gradient(circle,rgba(91, 74, 135, 1) 0%, rgba(62, 48, 94, 1) 39%, rgba(43, 13, 105, 1) 84%);
+body{
+    background-color: blueviolet;
+    background-color:radial-gradient(circle,rgba(91, 74, 135, 1) 0%, rgba(62, 48, 94, 1) 39%, rgba(43, 13, 105, 1) 84%);
 }
 
 #charSelect{
     display: flex;
     justify-content: center;
     background-color: aliceblue;
-    height: 408px;
+    height: 1px;
     vertical-align: middle;
 }
 
 #charSelectTemplate{
-   width: 100%;
+    width: 100%;
     vertical-align: middle;
-   
 }
 
 #charSelectLeft{
