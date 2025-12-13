@@ -68,10 +68,11 @@ def parse_move(move_str):
     return result
 
 def home(request):
-    framedata = FrameData.objects.filter(character__name="Devil_Jin")
+    character = request.GET.get("character")
+    framedata = FrameData.objects.filter(character__name=character)
 
     moves_list = []
     for move in framedata:
         moves_list.append(parse_move(move.move))  # append list of keys
 
-    return render(request, "home.html", {"moves_list": moves_list})
+    return render(request, "home.html", {"moves_list": moves_list}, character=character)
