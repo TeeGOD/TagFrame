@@ -4,5 +4,5 @@ from . import views
 # sets the list of urls the user will visit
 urlpatterns = [
     path('', views.home, name='home'),
-    path('character/', views.character),
+    path('character/', views.character, name='character'),
 ]

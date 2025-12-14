@@ -10,11 +10,13 @@
 <body>
     <div id="container">
             <div id="btnList">
-                {% for character in character_list%}
-                <btn class="character_btn"><a href="character?character={{character}}">
-                    {{character}}
-                </a></btn>
-                {%endfor%}
+                {% for character in character_list %}
+                    <button class="character_btn">
+                        <a href="{% url 'character' %}?character={{ character.raw }}">
+                            {{ character.display }}
+                        </a>
+                    </button>
+                {% endfor %}
             </div>
     </div>
 </body>

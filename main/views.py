@@ -66,19 +66,22 @@ def parse_move(move_str):
 
     return result
 
-#request for the home page, sends all the character names to make the buttons for the user
+"""request for the home page, sends all the character names to make the buttons for the user"""
 def home(request):
-    character_list = Characters.objects.all()
     characters = Characters.objects.all()
-
     character_list = []
+    
     for character in characters:
-        character_list.append((character.name))
+        character_list.append({
+            "raw": character.name,
+            "display": character.name.replace("_", " ")
+        })
 
     return render(request, "home.html", {"character_list" : character_list})
 
-#request for the character page, pulls the full movelist of a character based on the buttons pressed
-#then uses the parsing function to make it understandable to a human being.
+
+"""request for the character page, pulls the full movelist of a character based on the buttons pressed
+then uses the parsing function to make it understandable to a human being."""
 def character(request):
     character = request.GET.get("character")
     character_list = Characters.objects.all()
