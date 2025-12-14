@@ -2,27 +2,14 @@
 {% load static %}
 <html lang="en">
     <link rel="stylesheet" href="{% static '\style\style.css' %}">   
-    {% comment %} <script type = "text/javascript" src="{% static '\js\script.js' %}"></script> {% endcomment %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TagFrame</title>
+    <h1>
+        Page Introuvable
+    </h1>
 </head>
 <body>
-      <ul>
-    {% for move in moves_list %}
-        <li>
-            {% for key_group in move %}
-                {% if key_group|length > 1 %}
-                    {% for key in key_group %}
-                        <img src="{% static 'keys/'|add:key|add:'.png' %}" alt="{{ key }}" style="width: 40px; height: 40px;">
-                    {% endfor %}
-                {% else %}
-                    <img src="{% static 'keys/'|add:key_group.0|add:'.png' %}" alt="{{ key_group.0 }}" style="width: 40px; height: 40px;">
-                {% endif %}
-            {% endfor %}
-        </li>
-    {% endfor %}
-    </ul>
 </body>
 </html>

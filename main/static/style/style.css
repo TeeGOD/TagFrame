@@ -4,47 +4,65 @@
 }
 
 body{
-    background-color: blueviolet;
-    background-color:radial-gradient(circle,rgba(91, 74, 135, 1) 0%, rgba(62, 48, 94, 1) 39%, rgba(43, 13, 105, 1) 84%);
+    background:radial-gradient(circle,rgba(91, 74, 135, 1) 0%, rgba(62, 48, 94, 1) 39%, rgba(43, 13, 105, 1) 84%);
+    
 }
 
-#charSelect{
+#container{
     display: flex;
+    align-items: center;
     justify-content: center;
-    background-color: aliceblue;
-    height: 1px;
-    vertical-align: middle;
+    height: 80%;
 }
 
-#charSelectTemplate{
-    width: 100%;
-    vertical-align: middle;
-}
-
-#charSelectLeft{
+#btnList{
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    row-gap: 1px;
+    justify-content: center;
+    justify-self: center;
+    text-align: center;
+    margin-top: 25%;
+    width: 785px;
 }
 
-#charSelectRight{
+.character_btn{
+    margin-left:5px ;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    row-gap: 1px;
+    width: fit-content;
+    height: fit-content;
+    font-family: Bebas;
 }
 
-.charCard{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: grey;
-    height: 115px;
-    width: 75px;
+.character_btn:hover{
+    cursor:pointer
 }
 
-#charRandom{
-    margin: 0px;
-    padding: 0px;
+a{
+    padding: 1px 6px;
+    border: 1px outset buttonborder;
+    border-radius: 3px;
+    color: buttontext;
+    background-color: buttonface;
+    text-decoration: none;
+    font-size: 27px;
 }
+
+/*this is for Character Move List directly*/
+
+@font-face {
+    font-family: Bebas;
+    src: url(../Bebas-Regular.otf);
+}
+h1{
+    /* display: flex; */
+    font-family: bebas;
+    margin: 20px;
+}
+
+#characterMoves{
+    list-style-type: none;
+    margin-left: 20px;
+    font-size: 40px;
+    font-family: bebas;
+}
+

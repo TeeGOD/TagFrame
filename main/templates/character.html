@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 {% load static %}
 <html>
-    <link rel="shortcut icon" type="image/png" href="{% static 'main\static\style' %}" >
+    <link rel="stylesheet" href="{% static '\style\style.css' %}">  
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.svg' %}" >
 <head>
     <title>My Site</title>
 </head>
 <body>
-    <h1>Characters List</h1>
-    <ul>
+        
+    <h1>Move list of {{character_name}}</h1>
+
+     <ul id="characterMoves">
     {% for move in moves_list %}
         <li>
             {% for key_group in move %}
@@ -18,6 +21,7 @@
                 {% else %}
                     <img src="{% static 'keys/'|add:key_group.0|add:'.png' %}" alt="{{ key_group.0 }}" style="width: 40px; height: 40px;">
                 {% endif %}
+               
             {% endfor %}
         </li>
     {% endfor %}
