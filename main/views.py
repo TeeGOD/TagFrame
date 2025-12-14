@@ -86,8 +86,17 @@ def character(request):
 
     moves_list = []
     for move in framedata:
-        moves_list.append(parse_move(move.move))  # append list of keys
+        parsed_move = parse_move(move.move) if move.move else []
+        moves_list.append({
+            "move": parsed_move,
+            "hit_type": move.hit_type,
+            "damage": move.damage,
+            "startup": move.startup,
+            "block": move.block,
+            "hit": move.hit,
+            "counter_hit": move.counter_hit,
+        })
 
-    return render(request, "character.html", {"moves_list": moves_list, "character_list" : character_list, "character_name" : (character).replace("_", " ")})
+    return render(request, "character.html", {"moves_list": moves_list, "character_list": character_list, "character_name": character.replace("_", " "),})
 
     
