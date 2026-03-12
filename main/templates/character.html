@@ -10,21 +10,25 @@
         
     <h1>Move list of {{character_name}}</h1>
 
-     <ul id="characterMoves">
-    {% for move in moves_list %}
-        <li>
-            {% for key_group in move %}
-                {% if key_group|length > 1 %}
-                    {% for key in key_group %}
-                        <img src="{% static 'keys/'|add:key|add:'.png' %}" alt="{{ key }}" style="width: 40px; height: 40px;">
-                    {% endfor %}
-                {% else %}
-                    <img src="{% static 'keys/'|add:key_group.0|add:'.png' %}" alt="{{ key_group.0 }}" style="width: 40px; height: 40px;">
-                {% endif %}
-               
-            {% endfor %}
-        </li>
-    {% endfor %}
-    </ul>
+    <div id="card_container">
+        <div id = "moves_card">
+        {% for move in moves_list %}
+        
+            <div class="move_card">
+                {% for key_group in move %}
+                    {% if key_group|length > 1 %}
+                        {% for key in key_group %}
+                            <img src="{% static 'keys/'|add:key|add:'.png' %}" alt="{{ key }}" style="width: 40px; height: 40px;">
+                        {% endfor %}
+                    {% else %}
+                        <img src="{% static 'keys/'|add:key_group.0|add:'.png' %}" alt="{{ key_group.0 }}" style="width: 40px; height: 40px;">
+                    {% endif %}
+                
+                {% endfor %}
+            </div>
+            
+        {% endfor %}
+        </div>
+    </div>
 </body>
 </html>
