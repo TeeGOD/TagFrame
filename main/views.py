@@ -66,19 +66,22 @@ def parse_move(move_str):
 
     return result
 
-#request for the home page, sends all the character names to make the buttons for the user
+"""request for the home page, sends all the character names to make the buttons for the user"""
 def home(request):
-    character_list = Characters.objects.all()
     characters = Characters.objects.all()
-
     character_list = []
+    
     for character in characters:
-        character_list.append((character.name))
+        character_list.append({
+            "raw": character.name,
+            "display": character.name.replace("_", " ")
+        })
 
     return render(request, "home.html", {"character_list" : character_list})
 
-#request for the character page, pulls the full movelist of a character based on the buttons pressed
-#then uses the parsing function to make it understandable to a human being.
+
+"""request for the character page, pulls the full movelist of a character based on the buttons pressed
+then uses the parsing function to make it understandable to a human being."""
 def character(request):
     character = request.GET.get("character")
     character_list = Characters.objects.all()
@@ -86,8 +89,17 @@ def character(request):
 
     moves_list = []
     for move in framedata:
-        moves_list.append(parse_move(move.move))  # append list of keys
+        parsed_move = parse_move(move.move) if move.move else []
+        moves_list.append({
+            "move": parsed_move,
+            "hit_type": move.hit_type,
+            "damage": move.damage,
+            "startup": move.startup,
+            "block": move.block,
+            "hit": move.hit,
+            "counter_hit": move.counter_hit,
+        })
 
-    return render(request, "character.html", {"moves_list": moves_list, "character_list" : character_list, "character_name" : (character).replace("_", " ")})
+    return render(request, "character.html", {"moves_list": moves_list, "character_list": character_list, "character_name": character.replace("_", " "),})
 
     
