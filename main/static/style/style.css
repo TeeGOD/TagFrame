@@ -80,7 +80,6 @@ img{
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    vertical-align: center;
     align-self: center;
     width: 90%;
 }
@@ -96,8 +95,9 @@ img{
 .move_card{
     display: flex;
     justify-content: center;
-    background-color: rgb(101, 14, 172);
-    backdrop-filter: blur(10px);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
     flex-wrap: wrap;
     flex-direction: column;
     margin: 15px 30px 15px 30px;
@@ -109,6 +109,15 @@ img{
     width: 640px;
     height: 360px;
     padding-bottom: 30px;
+}
+
+.move_main_info{
+    display: flex;
+    width: 80%;
+}
+
+.main_info_txt{
+    width: fit-content;
 }
 
 
