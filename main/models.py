@@ -28,6 +28,7 @@ class FrameData(models.Model):
     hit = models.TextField(null=True, blank=True)
     counter_hit = models.TextField(null=True, blank=True)
     notes = models.TextField(null=True, blank=True)
+    move_name = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.character.name} - {self.move}"
