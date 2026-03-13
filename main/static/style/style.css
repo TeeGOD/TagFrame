@@ -53,41 +53,16 @@ a{
     font-family: Bebas;
     src: url(../Bebas-Regular.otf);
 }
+
 h1{
-    /* display: flex; */
     font-family: bebas;
     margin: 20px;
 }
 
-/* #characterMoves{
+#characterMoves{
     list-style-type: none;
     margin-left: 20px;
     font-size: 40px;
     font-family: bebas;
-} */
-
-#card_container{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-}
-
-#moves_card{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-self: center;
-    width: 80%;
-}
-
-.move_card{
-    display: flex;
-    justify-content: center;
-    background-color: aqua;
-    width: 275px;
-    padding: 5px;
-    margin: 5px;
 }
 
