@@ -59,10 +59,66 @@ h1{
     margin: 20px;
 }
 
-#characterMoves{
-    list-style-type: none;
-    margin-left: 20px;
-    font-size: 40px;
+img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: bebas;
+    font-size: 30px;
 }
+
+#card_container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#moves_card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    width: 90%;
+}
+
+#key_div{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    vertical-align: center;
+    padding: 5px;
+}
+
+.move_card{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 15px 30px 15px 30px;
+    border-radius: 25px;
+}
+
+.card_placeholder{
+    display: flex;
+    width: 640px;
+    height: 360px;
+    padding-bottom: 30px;
+}
+
+.move_main_info{
+    display: flex;
+    width: 80%;
+}
+
+.main_info_txt{
+    width: fit-content;
+}
+
+
 
