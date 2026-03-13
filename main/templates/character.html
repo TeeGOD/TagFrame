@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{% static '\style\style.css' %}">  
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.svg' %}" >
 <head>
-    <title>My Site</title>
+    <title>Moves of {{character_name}}</title>
 </head>
 <body>
         
@@ -19,16 +19,21 @@
                         {% for key_group in move %}
                             {% if key_group|length > 1 %}
                                 {% for key in key_group %}
-                                    <img src="{% static 'keys/'|add:key|add:'.png' %}" alt="{{ key }}" style="width: 40px; height: 40px;">
+                                    <img src="{% static 'keys/'|add:key|add:'.png' %}" alt="{{ key }}" style="width: 35px; height: 35px;">
                                 {% endfor %}
                             {% else %}
-                                <img src="{% static 'keys/'|add:key_group.0|add:'.png' %}" alt="{{ key_group.0 }}" style="width: 40px; height: 40px;">
+                                <img src="{% static 'keys/'|add:key_group.0|add:'.png' %}" alt="{{ key_group.0 }}" style="width: 35px; height: 35px;">
                             {% endif %}
 
                         {% endfor %}
                     </div>
                 <div>
                     <img src="{% static 'images/move_cards/img/Kazuya_default.png'%}" class="card_placeholder">
+                </div>
+                <div class="move_main_info">
+                    <p class="main_info_txt">
+                        
+                    </p>
                 </div>
             </div>
             

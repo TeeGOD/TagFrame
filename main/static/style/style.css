@@ -82,7 +82,7 @@ img{
     text-align: center;
     vertical-align: center;
     align-self: center;
-    width: 80%;
+    width: 90%;
 }
 
 #key_div{
@@ -90,23 +90,25 @@ img{
     justify-content: center;
     text-align: center;
     vertical-align: center;
+    padding: 5px;
 }
 
 .move_card{
     display: flex;
     justify-content: center;
-    background-color: aqua;
+    background-color: rgb(101, 14, 172);
+    backdrop-filter: blur(10px);
     flex-wrap: wrap;
     flex-direction: column;
-    padding: 5px;
-    margin: 5px;
+    margin: 15px 30px 15px 30px;
     border-radius: 25px;
 }
 
 .card_placeholder{
     display: flex;
-    width: 1280px;
-    height: 720px;
+    width: 640px;
+    height: 360px;
+    padding-bottom: 30px;
 }
 
 
