@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-    <link rel="stylesheet" href="{% static '\style\style.css' %}">   
+    <link rel="stylesheet" href="{% static '\style\style.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.svg' %}" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TagFrame</title>
 </head>
+<html>
+    <link rel="stylesheet" href="{% static '\style\style.css' %}">  
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.svg' %}" >
+<head>
+    <title>TagFrame</title>
+
+</head>
+<header>
+    <button class="character_btn"><a href={%url 'home' %}> Main Menu </a></div>
+</header>
 <body>
     <div id="container">
             <div id="btnList">

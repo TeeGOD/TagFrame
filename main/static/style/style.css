@@ -3,10 +3,24 @@
  padding: 0px;
 }
 
+:root{
+    scrollbar-color: #d1d1d180 #2c2c2c;
+    scroll-behavior: smooth;
+}
 body{
     background:radial-gradient(circle,rgba(91, 74, 135, 1) 0%, rgba(62, 48, 94, 1) 39%, rgba(43, 13, 105, 1) 84%);
-    
+    background-repeat:repeat
 }
+header{
+    display: flex;
+    height: 5vw;
+    vertical-align: middle;
+    align-items:center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+
 
 #container{
     display: flex;
@@ -15,12 +29,14 @@ body{
     height: 80%;
 }
 
+
+
 #btnList{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     justify-self: center;
-    text-align: center;
+    
     margin-top: 25%;
     width: 785px;
 }
@@ -35,6 +51,12 @@ body{
 
 .character_btn:hover{
     cursor:pointer
+}
+
+p{
+    font-family: bebas;
+    text-align: center;
+    width:100%
 }
 
 a{
@@ -56,7 +78,9 @@ a{
 
 h1{
     font-family: bebas;
-    margin: 20px;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
 }
 
 img{
@@ -75,27 +99,26 @@ img{
     padding: 0px;
 }
 
-#moves_card{
+#move_cards{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    align-self: center;
     width: 90%;
 }
 
 #key_div{
     display: flex;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    vertical-align: center;
     padding: 5px;
 }
 
 .move_card{
     display: flex;
     justify-content: center;
-    text-align: center;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(15px);
     flex-wrap: wrap;
@@ -112,6 +135,13 @@ img{
 }
 
 .move_main_info{
+    display: flex;
+    width: fit-content;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.move_main_info_down, .move_main_info_up{
     display: flex;
     width: 80%;
 }
