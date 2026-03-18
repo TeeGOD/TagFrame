@@ -7,7 +7,9 @@
     scrollbar-color: #d1d1d180 #2c2c2c;
     scroll-behavior: smooth;
 }
+
 body{
+    height: 100%;
     background:linear-gradient(134deg, rgb(82, 44, 175) 0%, rgba(62, 48, 94, 1) 39%, rgb(25, 6, 61) 84%);
 }
 
@@ -32,17 +34,14 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80%;
+    height: 100%;
 }
 
 #btnList{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    justify-self: center;
-    margin-top: 25%;
     width: 785px;
-    
 }
 
 .character_btn{
