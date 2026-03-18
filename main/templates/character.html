@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 {% load static %}
 <html>
-    <link rel="stylesheet" href="{% static '\style\style.css' %}">  
+    <link rel="stylesheet" href="{% static '\style\style.css' %}">
+    <script href="{% static '\js\script.js' %}"></script>
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.svg' %}" >
 <head>
     <title>Moves of {{character_name}}</title>
 </head>
 <header>
     <h1>Move list of {{character_name}}</h1>
-    <button class="character_btn"><a href={%url 'home' %}> Main Menu </a></div>
+    <div id="header_btns">
+        <button class="character_btn"><a href={%url 'home' %}> Main Menu </a>
+        <button class="glossary_btn"><a href=> glossary</a></div>
+    </div>
 </header>
 <body>
         
@@ -21,18 +25,19 @@
             <div class="move_card">
                     <div id="key_div">
                         {% if move.move_name%}
-                            <p>{{ move.move_name }}</p>
-                            {%  endif %}
-
-                        {% for key_group in move.move %}
-                            {% if key_group|length > 1 %}
-                                {% for key in key_group %}
-                                    <img src="{% static 'keys/'|add:key|add:'.png' %}" alt="{{ key }} &nbsp" style="width: 35px; height: 35px;">
-                                {% endfor %}
-                            {% else %}
-                                <img src="{% static 'keys/'|add:key_group.0|add:'.png' %}" alt="{{ key_group.0 }} &nbsp" style="width: 35px; height: 35px;">
-                            {% endif %}
-                        {% endfor %}
+                            <p class="move_name">{{ move.move_name }}</p>
+                        {%  endif %}
+                        <div class="keys_img_div">
+                            {% for key_group in move.move %}
+                                {% if key_group|length > 1 %}
+                                    {% for key in key_group %}
+                                        <img src="{% static 'keys/'|add:key|add:'.png' %}" alt="{{ key }}" style="width: 35px; height: 35px;">
+                                    {% endfor %}
+                                {% else %}
+                                    <img src="{% static 'keys/'|add:key_group.0|add:'.png' %}" alt="{{ key_group.0 }}" style="width: 35px; height: 35px;">
+                                {% endif %}
+                            {% endfor %}
+                        </div>
 
                     </div>
                 <div>
@@ -47,8 +52,14 @@
                         </div>
 
                     <div class="move_main_info_down">
-                        <p class="main_info_txt">{{ move.block }} On Block &nbsp</p>
-                        <p class="main_info_txt">{{ move.hit }} On Hit&nbsp</p>
+                        {% if move.block %}
+                            <p class="main_info_txt">{{ move.block }} On Block &nbsp</p>
+                        {% endif %}
+
+                        {% if move.hit %}
+                            <p class="main_info_txt">{{ move.hit }} On Hit&nbsp</p>
+                        {% endif %}
+
                     </div>
                 </div>
             </div>
