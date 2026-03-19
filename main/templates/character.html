@@ -2,7 +2,7 @@
 {% load static %}
 <html>
     <link rel="stylesheet" href="{% static '\style\style.css' %}">
-    <script href="{% static '\js\script.js' %}"></script>
+    <script src="{% static '\js\script.js' %}"></script>
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.svg' %}" >
 <head>
     <title>Moves of {{character_name}}</title>
@@ -11,17 +11,17 @@
     <h1>Move list of {{character_name}}</h1>
     <div id="header_btns">
         <button class="character_btn"><a href={%url 'home' %}> Main Menu </a>
-        <button class="glossary_btn"><a href=> glossary</a></div>
+        <button class="glossary_btn"><a> glossary</a></div>
     </div>
 </header>
 <body>
-        
-    
-
+    <div id="glossary_div_container">
+        <div id="glossary_div">
+        </div>
+    </div>
     <div id="card_container">
         <div id = "move_cards">
         {% for move in moves_list %}
-
             <div class="move_card">
                     <div id="key_div">
                         {% if move.move_name%}
@@ -45,15 +45,19 @@
                 </div>
                 <div class="move_main_info">
                     <div class="move_main_info_up">
-                        <p class="main_info_txt">{{ move.startup}} Startup  &nbsp</p>
-                        {% if move.hit_level %}
-                            <p class="main_info_txt"> {{ move.hit_level }}</p>
+
+                        {% if move.startup %}
+                            <p class="main_info_txt">{{ move.startup}} Start&nbsp</p>
+                        {% endif %}
+
+                        {% if move.hit_type %}
+                            <p class="main_info_txt"> {{ move.hit_type }}</p>
                         {% endif %}
                         </div>
 
                     <div class="move_main_info_down">
                         {% if move.block %}
-                            <p class="main_info_txt">{{ move.block }} On Block &nbsp</p>
+                            <p class="main_info_txt">{{ move.block }} On Block&nbsp</p>
                         {% endif %}
 
                         {% if move.hit %}
