@@ -65,11 +65,18 @@ header{
 p, a{
     font-family: Bebas;
     text-align: center;
-    width:100%
+}
+
+.a_main_menu{
+    padding: 0px; 
+    border: none;
+    background-color:transparent;
+    text-decoration: none;
+    font-size: 27px;
 }
 
 a{
-    padding: 1px 6px;
+    /* padding: 1px 6px; */
     border: 1px outset buttonborder;
     border-radius: 3px;
     color: buttontext;
