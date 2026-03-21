@@ -24,7 +24,7 @@
                 {% for character in character_list %}
                     <button class="character_btn">
                         <a href="{% url 'character' %}?character={{ character.raw }}">
-                            {{ character.display }}
+                           <img class="char_mugshot" src="{% static 'images/ig_render/mugshot/mugshot_'|add:character.raw|add:'.png' %}">
                         </a>
                     </button>
                 {% endfor %}
