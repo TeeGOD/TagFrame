@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
-    <link rel="stylesheet" href="{% static '\style\style.css' %}">
-    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.svg' %}" >
-    <style>html, body {margin: 0; height: 100%; overflow: hidden}</style>
+ <html lang="en">
+    <link rel="stylesheet" href="{% static '\style\style.css' %}">  
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.svg' %}">
 <head>
+    <title>TagFrame</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TagFrame</title>
 </head>
-<html>
-    <link rel="stylesheet" href="{% static '\style\style.css' %}">  
-    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.svg' %}" >
-<head>
-    <title>TagFrame</title>
-</head>
+
 <header>
     <button class="character_btn"><a href={%url 'home' %}> Main Menu </a></div>
 </header>
+
 <body>
     <div id="container">
-            <div id="btnList">
-                {% for character in character_list %}
-                    <button class="character_btn">
-                        <a class="a_main_menu" href="{% url 'character' %}?character={{ character.raw }}">
-                           <img class="char_mugshot" src="{% static 'images/ig_render/mugshot/mugshot_'|add:character.raw|add:'.png' %}">
-                        </a>
-                    </button>
-                {% endfor %}
-            </div>
+        <div id="btnList">
+            {% for character in character_list %}
+                <button class="character_btn">
+                    <a class="a_main_menu" href="{% url 'character' %}?character={{ character.raw }}">
+                        <img loading="lazy" class="char_mugshot" src="{% static 'images/ig_render/mugshot/mugshot_'|add:character.raw|add:'.png' %}">
+                    </a>
+                </button>
+            {% endfor %}
+        </div>
     </div>
+    <footer>
+        <a href={%url 'credit'%}>credit</a>
+    </footer>
 </body>
 </html>

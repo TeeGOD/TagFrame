@@ -101,6 +101,9 @@ def character(request):
             "move_name": move.move_name
         })
 
-    return render(request, "character.html", {"moves_list": moves_list, "character_list": character_list, "character_name": character.replace("_", " "),})
+    return render(request, "character.html", {"moves_list": moves_list, "character_list": character_list, "character_name": character.replace("_", " "), "character_raw": character,})
 
+
+def credit(request):
+    return render(request, "credit.html")
     

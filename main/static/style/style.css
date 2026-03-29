@@ -26,6 +26,21 @@ header{
     backdrop-filter: blur(5px);    
 }
 
+footer{
+    display: flex;
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-around;
+    height: 2.5vw;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
 #header_btns{
     display: flex;
     flex-wrap: wrap;
@@ -85,6 +100,27 @@ a{
     font-size: 27px;
 }
 
+.a_credit{
+border: none;
+border-radius: 0;
+color: buttontext;
+background-color: transparent;
+text-decoration: none;
+}
+
+.a_credit:hover{
+    font-size: 30px;
+    color: #c0c0c0;
+}
+
+#div_credit{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    align-items: center;
+    text-align: center;
+}
+
 /*this is for Character Move List directly*/
 
 @font-face {
@@ -95,14 +131,14 @@ a{
     src: url(../tarrgetchrome.ttf)
 }
 
-/* h1{
+h1, h2, h3, h4{
     font-family: bebas;
     display: flex;
     width: fit-content;
     height: fit-content;
-    color: white;
-    text-shadow: 1px 1px 2px #141414;
-} */
+    color: #626262;
+    text-shadow: 5px 5px 3px #141414;
+}
 
 #char_cr{
     display: flex;

@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 {% load static %}
-<html>
-    <link rel="stylesheet" href="{% static '\style\style.css' %}">
-    <script src="{% static '\js\script.js' %}"></script>
-    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.svg' %}" >
+<html lang="en">
+    <link rel="stylesheet" href="{% static '\style\style.css' %}">  
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.svg' %}">
 <head>
     <title>Moves of {{character_name}}</title>
 </head>
 <header>
-    <img id="char_cr" src="{% static 'images/ig_render/cr/cr_'|add:character_name|add:'.png'%}"></img>
-        <p id="char_cr_name">{{character_name}}</p>
-      
+    <img id="char_cr" loading="lazy" src="{% static 'images/ig_render/cr/cr_'|add:character_raw|add:'.png'%}"></img>
+    <p id="char_cr_name">{{character_name}}</p>
     <div id="header_btns">
         <button class="character_btn"><a href={%url 'home' %}> Main Menu </a>
         <button class="glossary_btn"><a>glossary</a></div>
@@ -19,6 +17,7 @@
 <body>
     <div id="glossary_div_container">
         <div id="glossary_div">
+
         </div>
     </div>
     
@@ -73,5 +72,8 @@
         {% endfor %}
         </div>
     </div>
+    <footer>
+        <a href="./credit">credit</a>
+    </footer>
 </body>
 </html>
