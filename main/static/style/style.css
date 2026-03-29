@@ -90,13 +90,38 @@ a{
 @font-face {
     font-family: Bebas;
     src: url(../Bebas-Regular.otf);
+
+    font-family: Tarrget;
+    src: url(../tarrgetchrome.ttf)
 }
 
-h1{
+/* h1{
     font-family: bebas;
     display: flex;
     width: fit-content;
     height: fit-content;
+    color: white;
+    text-shadow: 1px 1px 2px #141414;
+} */
+
+#char_cr{
+    display: flex;
+    height: 12vh;
+    width: 13vh;
+    margin-left: 50px;
+}
+
+#char_cr_name{
+    display: flex;
+    position: absolute;
+    margin-left: 5vw;
+    font-family: Tarrget;
+    color: transparent;
+    background-image: linear-gradient(45deg,#999 5%,#fff 10%,#ccc 30%,#ddd 50%,#ccc 70%,#fff 80%,#999 95%);
+    background-clip: text;
+    font-size: 75px;
+    letter-spacing: 10px;
+    
 }
 
 img{

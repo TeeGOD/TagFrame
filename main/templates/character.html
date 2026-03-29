@@ -8,10 +8,12 @@
     <title>Moves of {{character_name}}</title>
 </head>
 <header>
-    <h1>Move list of {{character_name}}</h1>
+    <img id="char_cr" src="{% static 'images/ig_render/cr/cr_'|add:character_name|add:'.png'%}"></img>
+        <p id="char_cr_name">{{character_name}}</p>
+      
     <div id="header_btns">
         <button class="character_btn"><a href={%url 'home' %}> Main Menu </a>
-        <button class="glossary_btn"><a> glossary</a></div>
+        <button class="glossary_btn"><a>glossary</a></div>
     </div>
 </header>
 <body>
