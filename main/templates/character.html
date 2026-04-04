@@ -12,6 +12,8 @@
     <div id="header_btns">
         <button class="character_btn"><a href={%url 'home' %}> Main Menu </a>
         <button class="glossary_btn"><a>glossary</a></div>
+        <button id="search"><a>Search</a></div>
+        <input id="move_search" placeholder="Search for moves" style="overflow: hidden; resize: none;" type="text" value="">
     </div>
 </header>
 <body>
@@ -75,5 +77,6 @@
     <footer>
         <a href="./credit">credit</a>
     </footer>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

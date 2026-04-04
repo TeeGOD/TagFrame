@@ -4,6 +4,7 @@ window.onload = () => {
     const glossary_btn = document.querySelector(".glossary_btn");
     const glossary_div = document.querySelector("#glossary_div");
     const glossary_div_container = document.querySelector("#glossary_div_container");
+    const search_button = document.querySelector(".search_button")
             
     glossary_btn.addEventListener("click", function(){
 
@@ -68,4 +69,11 @@ function enableScroll() {
   window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
   document.body.style.overflow = 'visible';;
 
+}
+search_button.addEventListener("click", function(){
+    search();        
+   })
+
+function search() {
+  location.href = 'http://127.0.0.1:8000/character/?character=Dragunov&search=' + document.getElementById('move_search')
 }
