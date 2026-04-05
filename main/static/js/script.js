@@ -14,7 +14,7 @@ window.onload = () => {
 
     search_bar.addEventListener("keyup", function(){
       if(search_bar.value != ""){
-      window.history.pushState(null, document.title, "?character=" + character_name + "?search=" + search_bar.value)
+      window.history.pushState(null, document.title, "?character=" + character_name + "&search=" + search_bar.value)
       }else{
       window.history.pushState(null, document.title, "?character=" + character_name)
     }
@@ -40,8 +40,7 @@ ToggleGlossary = function(){
    })
 }
 
-
-
+// locking scroll functions
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
