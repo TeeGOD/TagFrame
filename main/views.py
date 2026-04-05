@@ -5,13 +5,13 @@ from .helper import matches_move_search, parse_move
 
 """request for the home page, sends all the character names to make the buttons for the user"""
 def home(request):
-    characters = Characters.objects.all()
+    characters = Characters.objects.all().order_by('order_number')
     character_list = []
     
     for character in characters:
         character_list.append({
             "raw": character.name,
-            "display": character.name.replace("_", " ")
+            "display": character.name.replace("_", " "),
         })
 
     return render(request, "home.html", {"character_list" : character_list})

@@ -3,6 +3,7 @@ from django.db import models
 class Characters(models.Model):
     name = models.TextField(primary_key=True)
     special = models.TextField(null=True, blank=True)
+    order_number = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -29,6 +30,7 @@ class FrameData(models.Model):
     counter_hit = models.TextField(null=True, blank=True)
     notes = models.TextField(null=True, blank=True)
     move_name = models.TextField(null=True, blank=True)
+    condition = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.character.name} - {self.move}"
