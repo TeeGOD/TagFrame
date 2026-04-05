@@ -12,14 +12,14 @@
     <div id="header_btns">
         <button class="character_btn"><a href={%url 'home' %}> Main Menu </a>
         <button class="glossary_btn"><a>glossary</a></div>
-        <button id="search"><a>Search</a></div>
-        <input id="move_search" placeholder="Search for moves" style="overflow: hidden; resize: none;" type="text" value="">
+    {% comment %} adding a charactername to get it in the javascript {% endcomment %}
+        <input data-charactername={{character_name}} id="move_search" placeholder="Search for moves" type="text" value="">
     </div>
 </header>
 <body>
     <div id="glossary_div_container">
-        <div id="glossary_div">
 
+        <div id="glossary_div">
         </div>
     </div>
     
@@ -74,9 +74,9 @@
         {% endfor %}
         </div>
     </div>
-    <footer>
+    {% comment %} <footer>
         <a href="./credit">credit</a>
-    </footer>
+    </footer> {% endcomment %}
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
