@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import FrameData, Characters
 from .helper import matches_move_search, parse_move
+import random
 
 
 """request for the home page, sends all the character names to make the buttons for the user"""
@@ -11,7 +12,7 @@ def home(request):
     for character in characters:
         character_list.append({
             "raw": character.name,
-            "display": character.name.replace("_", " "),
+            "display": character.name.replace("_", " ")
         })
 
     return render(request, "home.html", {"character_list" : character_list})
@@ -20,11 +21,15 @@ def home(request):
 """request for the character page, pulls the full movelist of a character based on the buttons pressed
 then uses the parsing function to make it understandable to a human being."""
 def character(request):
+    character_list = Characters.objects.all()
     character = request.GET.get("character")
     search = request.GET.get("search", "").strip()
-    character_list = Characters.objects.all()
+    
+    # If the character is "random", redirect to a random character page
+    if character == "random":
+        return redirect(f"/character?character={random.choice(character_list).name}")
+        
     framedata = FrameData.objects.filter(character__name=character)
-
     moves_list = []
 
     for move in framedata:
