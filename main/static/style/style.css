@@ -58,7 +58,8 @@ footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 785px;
+    width: 84vw;
+    
 }
 
 .character_btn{
