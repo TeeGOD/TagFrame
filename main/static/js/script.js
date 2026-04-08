@@ -7,17 +7,14 @@ window.onload = () => {
   const search_bar = document.querySelector("#move_search");
   var character_name = search_bar.dataset.charactername
 
-  glossary_btn.addEventListener("click", function(){
-
-  ToggleGlossary();        
-  })  
+  glossary_btn.addEventListener("click", function(){ToggleGlossary();})  
 
     search_bar.addEventListener("keyup", function(){
       if(search_bar.value != ""){
       window.history.pushState(null, document.title, "?character=" + character_name + "&search=" + search_bar.value);
       }else{
       window.history.pushState(null, document.title, "?character=" + character_name)
-    }
+      }
      window.location.reload();
   })
 }
@@ -36,9 +33,9 @@ ToggleGlossary = function(){
     }
     console.log(IsGlossaryOpen);
 
-    search_button.addEventListener("click", function(){
-    search();        
-   })
+  //   search_button.addEventListener("click", function(){
+  //   search();        
+  //  })
 }
 
 // locking scroll functions
@@ -72,7 +69,7 @@ function disableScroll() {
   window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
   window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
   window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-  document.body.style.overflow = 'hidden';;
+  // document.body.style.overflow = 'hidden';
 }
 
 // call this to Enable
@@ -80,6 +77,6 @@ function enableScroll() {
   window.removeEventListener('DOMMouseScroll', preventDefault, false);
   window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
   window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
-  document.body.style.overflow = 'visible';;
+  // document.body.style.overflow = 'visible';
 
 }

@@ -12,14 +12,169 @@
     <div id="header_btns">
         <button class="character_btn"><a href={%url 'home' %}> Main Menu </a>
         <button class="glossary_btn"><a>glossary</a></div>
-    {% comment %} adding a charactername to get it in the javascript {% endcomment %}
+    {% comment %} adding a charactername to get it in the javascript for the search function {% endcomment %}
         <input data-charactername={{character_name}} id="move_search" placeholder="Search for moves" type="text" value="">
     </div>
 </header>
 <body>
     <div id="glossary_div_container">
-
         <div id="glossary_div">
+            <h1 class="glossary_content">This is a glossary of all the lingo and signs and what they mean.</h1>  
+            <table>
+                <thead> 
+                    <tr style="display: flex; flex-direction: row; justify-content: space-around;">
+                        <th scope="col"><h3>Key's signs</h3></th>
+                        <th scope="col"><h3>Definition</h3></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" style="display: flex; flex-direction: row;">
+                            <img class="glossary_content_img" src="{% static 'keys/1.png' %}" alt="">            
+                            <img class="glossary_content_img" src="{% static 'keys/2.png' %}" alt="">
+                            <img class="glossary_content_img" src="{% static 'keys/3.png' %}"  alt="">
+                            <img class="glossary_content_img" src="{% static 'keys/4.png' %}"  alt="">
+                        </th>
+                        <td>
+                            <p>Signs on your punch and kicks called in order,<br> 1,2,3,4 each reprensenting a limb</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="display: flex; flex-direction: row;">
+                            <img class="glossary_content_img" src="{% static 'keys/f.png' %}"  alt="">
+                            <img class="glossary_content_img" src="{% static 'keys/df.png' %}"  alt="">
+                        </th>
+                        <td>
+                            <p>Directions pressed, clicked fast</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row" style="display: flex; flex-direction: row;">
+                            <img class="glossary_content_img" src="{% static 'keys/fhold.png' %}"  alt="">        
+                            <img class="glossary_content_img" src="{% static 'keys/dfhold.png' %}"  alt="">
+                        </td>
+                        <td>
+                            <p>Directions pressed, held</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row" style="display: flex; flex-direction: row;"> 
+                            <img class="glossary_content_img" src="{% static 'keys/bracketl.png' %}"  alt="">
+                            <img class="glossary_content_img" src="{% static 'keys/bracketr.png' %}"  alt="">
+                        </td>
+                        <td>
+                            <p>Anything in brackets means it's pressed in quick succession,<br> also written with ~ between the keys</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">
+                            <p class="glossary_content">WS</p>        
+                        </td>
+                        <td>
+                            <p>While Standing</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">
+                            <p class="glossary_content">WR</p>        
+                        </td>
+                        <td>
+                            <p>While Running also FFF</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">
+                            <p class="glossary_content">CD</p>
+                        </td>
+                        <td>
+                            <p>Crouch Dash</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">
+                            <p class="glossary_content">SNK</p>
+                        </td>
+                        <td>    
+                            <p>Sneak</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">
+                            <p class="glossary_content">QCF, QCB</p>
+                        </td>
+                        <td>
+                            <p>Quarter Circle Forward/Back</p>
+                        </td>
+                    </tr>
+                        <tr>
+
+                            <td scope="row">
+                                <p class="glossary_content">HCF, HCB</p>
+                            </td>
+                            <td>
+                                <p>Half Circle Forward/Back</p>
+                            </td>
+                        </tr>
+                        <tr  style="display: flex; flex-direction: row; justify-content: space-around;">
+                            <th scope="row" colspan="2" style="display: flex; flex-direction: row; justify-content: center; align-items: center;"> 
+                                <h3>status effects</h3>
+                            </th>
+                        </tr>
+                    <tr>
+
+                        <th scope="row">
+                            <img class="glossary_content_img" src="{% static 'status/bound.png' %}"  alt="">
+                        </th>
+                        <td>
+                            <p>Bound, slames the opponent to the ground allowing you to keep your combo going.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <img class="glossary_content_img" src="{% static 'status/forcecrouch.png' %}"  alt="">
+                        </th>
+                        <td>
+                            <p>Force Crouch, forces the opponent to be in a crouching state giving you better frame advantage</p>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <th scope="row">
+                            <img class="glossary_content_img" src="{% static 'status/homing.png' %}"  alt="">
+                        </th>
+                        <td>
+                            <p>Homing, homes unto the opponent side movement also called tracking</p>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <th scope="row">
+                            <img class="glossary_content_img" src="{% static 'status/floorbreak.png' %}"  alt="">
+                        </th>
+                        <td>
+                            <p>FloorBreak, allows you to break the floor on the maps that have Breakable floors, uses your Bound</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <img class="glossary_content_img" src="{% static 'status/wallbreak.png' %}"  alt="">
+                        </th>
+                        <td>
+                            <p>WallBreak, allows you to break the wall on the maps that have Breakable walls, uses your Bound</p>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <th scope="row">
+                            <img class="glossary_content_img" src="{% static 'status/balconybreak.png' %}"  alt="">
+                        </th>
+                        <td>
+                            <p>BalconyBreak, allows you to break the balcony on the maps that have Breakable balconies, uses your Bound</p>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
         </div>
     </div>
     

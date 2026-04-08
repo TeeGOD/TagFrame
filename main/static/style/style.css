@@ -58,8 +58,7 @@ footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 84vw;
-    
+    width: 36vw;
 }
 
 .character_btn{
@@ -139,6 +138,7 @@ h1, h2, h3, h4{
     height: fit-content;
     color: #626262;
     text-shadow: 5px 5px 3px #141414;
+    padding: 15px;
 }
 
 #char_cr{
@@ -262,9 +262,56 @@ img{
 #glossary_div{
     display: none;
     position: inherit;
-    width: 55%;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    width: 60%;
     height: 85%;
     border-radius: 25px;
     margin-bottom: 6.5%;
     background-color: #2c2c2c;
 }
+
+.glossary_text_div{
+    font-size: 40px;
+}
+
+.glossary_content_img{
+    width: 45px; 
+    height: 45px;
+}
+
+#glossary_inside_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#glossary_left_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#glossary_right_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.glossary_text_def{
+    font-size: 28px;
+}
+
+table{
+    display: flex;
+    flex-direction: column;
+}
+
+tr{
+    min-height: 49px;
+}
+
+
