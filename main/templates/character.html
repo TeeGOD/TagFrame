@@ -21,10 +21,9 @@
         <div id="glossary_div">
             <h1 class="glossary_content">This is a glossary of all the lingo and signs and what they mean.</h1>  
             <table>
-                <thead> 
-                    <tr style="display: flex; flex-direction: row; justify-content: space-around;">
+                <thead style="background-color: #222222;"> 
+                    <tr style="display: flex; flex-direction: row; justify-content: space-around;" colspan="2">
                         <th scope="col"><h3>Key's signs</h3></th>
-                        <th scope="col"><h3>Definition</h3></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,19 +48,19 @@
                         </td>
                     </tr>
                     <tr>
-                        <td scope="row" style="display: flex; flex-direction: row;">
+                        <th scope="row" style="display: flex; flex-direction: row;">
                             <img class="glossary_content_img" src="{% static 'keys/fhold.png' %}"  alt="">        
                             <img class="glossary_content_img" src="{% static 'keys/dfhold.png' %}"  alt="">
-                        </td>
+                        </th>
                         <td>
                             <p>Directions pressed, held</p>
                         </td>
                     </tr>
                     <tr>
-                        <td scope="row" style="display: flex; flex-direction: row;"> 
+                        <th scope="row" style="display: flex; flex-direction: row;"> 
                             <img class="glossary_content_img" src="{% static 'keys/bracketl.png' %}"  alt="">
                             <img class="glossary_content_img" src="{% static 'keys/bracketr.png' %}"  alt="">
-                        </td>
+                        </th>
                         <td>
                             <p>Anything in brackets means it's pressed in quick succession,<br> also written with ~ between the keys</p>
                         </td>
@@ -115,8 +114,8 @@
                                 <p>Half Circle Forward/Back</p>
                             </td>
                         </tr>
-                        <tr  style="display: flex; flex-direction: row; justify-content: space-around;">
-                            <th scope="row" colspan="2" style="display: flex; flex-direction: row; justify-content: center; align-items: center;"> 
+                        <tr  style="background-color: #222222; display: flex; flex-direction: row; justify-content: center;" colspan="2">
+                            <th scope="row" colspan="2" style="display: flex; flex-direction: row;"> 
                                 <h3>status effects</h3>
                             </th>
                         </tr>
