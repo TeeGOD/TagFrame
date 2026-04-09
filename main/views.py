@@ -50,10 +50,8 @@ def character(request):
 
     return render(request, "character.html", {
         "moves_list": moves_list,
-        "character_list": character_list,
         "character_name": character.replace("_", " "),
         "character_raw": character,
-        "search": search,
     })
 
 
