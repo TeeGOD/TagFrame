@@ -339,10 +339,21 @@ input[type=text]{
     background-color: #444444;
     color: white;
     border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
-input[type=text]:focus{
+input:focus{
     border: none;
+    outline: none;
+    search_bar_div{
+        outline: auto;
+    }
+}
+
+search_button_img{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 
