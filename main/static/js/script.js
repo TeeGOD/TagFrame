@@ -15,8 +15,13 @@ window.onload = () => {
       if(search_bar.value != ""){
       window.history.pushState(null, document.title, "?character=" + character_name + "&search=" + search_bar.value);
       }else{
-      window.history.pushState(null, document.title, "?character=" + character_name)
+      window.history.pushState(null, document.title, "?character=" + character_name);
+      window.location.reload();
       }
+  })
+
+  glossary_div_container.addEventListener("click", function(){
+    ToggleGlossary()
   })
 }
 
