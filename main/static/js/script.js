@@ -5,9 +5,11 @@ window.onload = () => {
   const glossary_div = document.querySelector("#glossary_div");
   const glossary_div_container = document.querySelector("#glossary_div_container");
   const search_bar = document.querySelector("#move_search");
+  const search_bar_btn = document.querySelector("#search_button_img")
   var character_name = search_bar.dataset.charactername
 
   glossary_btn.addEventListener("click", function(){ToggleGlossary();})  
+  search_bar_btn.addEventListener("click", function(){window.location.reload();})
 
     search_bar.addEventListener("keyup", function(){
       if(search_bar.value != ""){
@@ -15,7 +17,6 @@ window.onload = () => {
       }else{
       window.history.pushState(null, document.title, "?character=" + character_name)
       }
-     window.location.reload();
   })
 }
 
@@ -25,17 +26,19 @@ ToggleGlossary = function(){
         glossary_div.style.display='flex';
         glossary_div_container.style.display='flex';
         disableScroll();
-    }else{
+      }else{
         IsGlossaryOpen = false;
         glossary_div.style.display='none';
         glossary_div_container.style.display='none';
         enableScroll();
     }
-    console.log(IsGlossaryOpen);
 
-  //   search_button.addEventListener("click", function(){
-  //   search();        
-  //  })
+}
+
+search_bar_reload = function(){
+  if(event.key === 'Enter') {
+  window.location.reload();
+  }
 }
 
 // locking scroll functions
@@ -46,24 +49,20 @@ var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 function preventDefault(e) {
   e.preventDefault();
 }
-
 function preventDefaultForScrollKeys(e) {
     if (keys[e.keyCode]) {
         preventDefault(e);
         return false;
     }
 }
-
 var supportsPassive = false;
 try {
   window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
     get: function () { supportsPassive = true; } 
   }));
 } catch(e) {}
-
 var wheelOpt = supportsPassive ? { passive: false } : false;
 var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
-
 // call this to Disable
 function disableScroll() {
   window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
@@ -71,7 +70,6 @@ function disableScroll() {
   window.addEventListener('keydown', preventDefaultForScrollKeys, false);
   // document.body.style.overflow = 'hidden';
 }
-
 // call this to Enable
 function enableScroll() {
   window.removeEventListener('DOMMouseScroll', preventDefault, false);

@@ -13,7 +13,10 @@
         <button class="character_btn"><a href={%url 'home' %}> Main Menu </a>
         <button class="glossary_btn"><a>glossary</a></div>
     {% comment %} adding a charactername to get it in the javascript for the search function {% endcomment %}
-        <input data-charactername={{character_name}} id="move_search" placeholder="Search for moves" type="text" value="">
+        <div style="display: flex; flex-direction: row;">
+            <img id="search_button_img" src="{% static '/images/magnifying_glass.svg' %}"  style="width: 20px; height: 20px; background-color: #444444; "></img>
+            <input data-charactername={{character_name}} id="move_search" placeholder="112 or cd2" type="text" value=""  onkeydown="search_bar_reload()">
+        </div>
     </div>
 </header>
 <body>

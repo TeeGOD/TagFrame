@@ -335,4 +335,14 @@ td{
     vertical-align: middle;
 }
 
+input[type=text]{
+    background-color: #444444;
+    color: white;
+    border: none;
+}
+
+input[type=text]:focus{
+    border: none;
+}
+
 
