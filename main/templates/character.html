@@ -13,7 +13,10 @@
         <button class="character_btn"><a href={%url 'home' %}> Main Menu </a>
         <button class="glossary_btn"><a>glossary</a></div>
     {% comment %} adding a charactername to get it in the javascript for the search function {% endcomment %}
-        <input data-charactername={{character_name}} id="move_search" placeholder="Search for moves" type="text" value="">
+        <div id="search_bar_div"style="display: flex; flex-direction: row;">
+            <img id="search_button_img" src="{% static '/images/magnifying_glass.svg' %}" ></img>
+            <input data-charactername={{character_name}} id="move_search" placeholder="112 or cd2" type="text" value=""  onkeydown="search_bar_reload()">
+        </div>
     </div>
 </header>
 <body>
@@ -198,7 +201,7 @@
                     </div>
                 </div>
                 <div>
-                    <img src="{% static 'images/move_cards/img/thumbnail_'|add:character_name|add:'.png'%}" onerror="this.src='{% static 'images/move_cards/img/thumbnail_placeholder.png' %}';">
+                    <img src="{% static 'images/move_cards/img/thumbnail_'|add:character_raw|add:'.webp'%}" onerror="this.src='{% static 'images/move_cards/img/thumbnail_placeholder.webp' %}';" style="width: 640px; height:360px">
                 </div>
                 <div class="move_main_info">
                     <div class="move_main_info_up">

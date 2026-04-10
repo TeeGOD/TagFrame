@@ -44,14 +44,22 @@ footer{
 #header_btns{
     display: flex;
     flex-wrap: wrap;
-    padding: 5px;
+    /* padding: 50px; */
+}
+
+#header_btns > * {
+        background-color:#444444;
+        border-radius: 5px;
+        margin: 5px;
+        border: none;
 }
 
 #container{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    vertical-align: middle;
+    height: 75vh;
 }
 
 #btnList{
@@ -70,7 +78,10 @@ footer{
 }
 
 .character_btn:hover{
-    cursor:pointer
+    cursor: pointer;
+    outline: solid;
+    outline-color: #999;
+    outline-width: 2px;
 }
 
 #char_mugshot{
@@ -85,17 +96,13 @@ p, a{
 .a_main_menu{
     padding: 0px; 
     border: none;
-    background-color:transparent;
     text-decoration: none;
     font-size: 27px;
 }
 
 a{
-    /* padding: 1px 6px; */
-    border: 1px outset buttonborder;
-    border-radius: 3px;
-    color: buttontext;
-    background-color: buttonface;
+    margin: 5px;
+    color: white;
     text-decoration: none;
     font-size: 27px;
 }
@@ -103,7 +110,7 @@ a{
 .a_credit{
 border: none;
 border-radius: 0;
-color: buttontext;
+color: white;
 background-color: transparent;
 text-decoration: none;
 }
@@ -125,7 +132,7 @@ text-decoration: none;
 
 @font-face {
     font-family: Bebas;
-    src: url(../Bebas-Regular.otf);
+    src: url(../Bebas-Regular.ttf);
 
     font-family: Tarrget;
     src: url(../tarrgetchrome.ttf)
@@ -220,10 +227,11 @@ img{
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
 }
-
+    
 .move_card:hover{
     filter: drop-shadow(0.5rem 0.5rem 10px rgba(255, 255, 255, 0.350));
     transform: scale(1.05);
+    cursor: pointer;
 }
 
 .card_placeholder{
@@ -246,6 +254,13 @@ img{
 }
 
 /*this is for everything glossary*/
+
+.glossary_btn:hover{
+    cursor: pointer;
+    outline: solid;
+    outline-color: #999;
+    outline-width: 2px;
+}
 
 #glossary_div_container{
     display: none;
@@ -335,4 +350,46 @@ td{
     vertical-align: middle;
 }
 
+/* everything related to the search bar  */
+
+input[type=text]{
+    background-color: #444444;
+    color: white;
+    font-family: bebas;
+    font-size: 15px;
+    border: none;
+    height: 32px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+input:focus{
+    cursor: text;
+    outline: none;
+}
+
+#search_button_img{
+    padding: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 32px;
+    height: 32px;
+    background-color: #444444; 
+}
+
+#search_button_img:hover{
+    cursor: pointer;
+}
+
+#search_bar_div{
+    margin-right: 125px;
+    border-radius: 5px;
+}
+
+
+#search_bar_div:has(> input:focus){
+    outline: solid;
+    outline-color: #999;
+    outline-width: 2px;
+}
 
