@@ -135,7 +135,9 @@ text-decoration: none;
 @font-face {
     font-family: Bebas;
     src: url(bebas_regular.ttf);
+}
 
+@font-face {
     font-family: Tarrget;
     src: url(tarrgetchrome.ttf);
 }
