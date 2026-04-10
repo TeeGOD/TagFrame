@@ -21,6 +21,7 @@ class FrameData(models.Model):
         null=True, 
         blank=True
     )
+    id = models.AutoField(primary_key=True)
     move = models.TextField(null=True, blank=True)
     hit_type = models.TextField(null=True, blank=True)
     damage = models.TextField(null=True, blank=True)

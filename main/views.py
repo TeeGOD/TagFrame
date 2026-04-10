@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.http import JsonResponse
 from .models import FrameData, Characters
 from .helper import matches_move_search, parse_move
 import random
@@ -38,13 +39,13 @@ def character(request):
 
         parsed_move = parse_move(move.move) if move.move else []
         moves_list.append({
+            "move_id": move.id,
             "move": parsed_move,
             "hit_type": move.hit_type,
             "damage": move.damage,
             "startup": move.startup,
             "block": move.block,
             "hit": move.hit,
-            "counter_hit": move.counter_hit,
             "move_name": move.move_name
         })
 
@@ -52,6 +53,14 @@ def character(request):
         "moves_list": moves_list,
         "character_name": character.replace("_", " "),
         "character_raw": character,
+    })
+
+def move_detail(request, move_id):
+    move = get_object_or_404(FrameData, id=move_id)
+    return JsonResponse({
+        "counter_hit": move.counter_hit,
+        "condition": move.condition,
+        "notes": move.notes,
     })
 
 
