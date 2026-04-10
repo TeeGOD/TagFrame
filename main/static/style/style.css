@@ -134,10 +134,10 @@ text-decoration: none;
 
 @font-face {
     font-family: Bebas;
-    src: url(../Bebas-Regular.ttf);
+    src: url(bebas_regular.ttf);
 
     font-family: Tarrget;
-    src: url(../tarrgetchrome.ttf)
+    src: url(tarrgetchrome.ttf);
 }
 
 h1, h2, h3, h4{
