@@ -31,6 +31,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    "tagframe.eu",
     "192.168.5.4",
     "192.168.0.107"
 ]
