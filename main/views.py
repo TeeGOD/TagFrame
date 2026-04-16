@@ -12,7 +12,7 @@ def home(request):
     
     for character in characters:
         character_list.append({
-            "raw": character.name.lower(),
+            "raw": character.name,
             "display": character.name.replace("_", " ")
         })
 
