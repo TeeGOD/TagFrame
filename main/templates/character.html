@@ -197,10 +197,10 @@
                             {% for key_group in move.move %}
                             {% if key_group|length > 1 %}
                             {% for key in key_group %}
-                            <img src="{% static 'keys/'|add:key|add:'.png' %}" alt="{{ key }}" style="width: 35px; height: 35px;">
+                            <img src="{% static 'keys/'|add:key|add:'.png'|lower %}" alt="{{ key }}" style="width: 35px; height: 35px;">
                             {% endfor %}
                             {% else %}
-                            <img src="{% static 'keys/'|add:key_group.0|add:'.png' %}" alt="{{ key_group.0 }}" style="width: 35px; height: 35px;">
+                            <img src="{% static 'keys/'|add:key_group.0|add:'.png'|lower %}" alt="{{ key_group.0 }}" style="width: 35px; height: 35px;">
                             {% endif %}
                             {% endfor %}
                         </div>
