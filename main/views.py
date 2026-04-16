@@ -48,7 +48,7 @@ def character(request):
             "hit": move.hit,
             "move_name": move.move_name
         })
-
+    print(moves_list)
     return render(request, "character.html", {
         "moves_list": moves_list,
         "character_name": character.replace("_", " "),
