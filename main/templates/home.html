@@ -17,7 +17,7 @@
         <div id="btnList">
             {% for character in character_list %}
                 <button class="character_btn">
-                    <a class="a_main_menu" href="{% url 'character' %}?character={{ character.raw.lower() }}">
+                    <a class="a_main_menu" href="{% url 'character' %}?character={{ character.raw }}">
                         <img loading="lazy" class="char_mugshot" src="{% static 'images/ig_render/mugshot/mugshot_'|add:character.raw|add:'.png'|lower %}">
                     </a>
                 </button>
