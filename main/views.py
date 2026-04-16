@@ -32,7 +32,6 @@ def character(request):
         
     framedata = FrameData.objects.filter(character__name=character)
     moves_list = []
-    print(framedata)
 
     for move in framedata:
         if search and not matches_move_search(move.move, search):
@@ -49,7 +48,6 @@ def character(request):
             "hit": move.hit,
             "move_name": move.move_name
         })
-    print(moves_list)
     return render(request, "character.html", {
         "moves_list": moves_list,
         "character_name": character.replace("_", " "),
