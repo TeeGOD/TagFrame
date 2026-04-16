@@ -8,7 +8,7 @@
     <title>Moves of {{character_name}}</title>
 </head>
 <header>
-    <img id="char_cr" loading="lazy" src="{% static 'images/ig_render/cr/cr_'|add:character_raw|add:'.png'|lower%}"></img>
+    <img id="char_cr" loading="lazy" src="{% static 'images/ig_render/cr/cr_'|add:character_raw|add:'.png'%}"></img>
     <p id="char_cr_name">{{character_name}}</p>
     <div id="header_btns">
         <button class="character_btn"><a href={%url 'home' %}> Main Menu </a>
@@ -206,7 +206,7 @@
                         </div>
                     </div>
                     <div>
-                        <img src="{% static 'images/move_cards/img/thumbnail_'|add:character_raw|add:'.webp|lower'%}" onerror="this.src='{% static 'images/move_cards/img/thumbnail_placeholder.webp' %}';" style="width: 640px; height:360px">
+                        <img src="{% static 'images/move_cards/img/thumbnail_'|add:character_raw|add:'.webp'%}" onerror="this.src='{% static 'images/move_cards/img/thumbnail_placeholder.webp' %}';" style="width: 640px; height:360px">
                     </div>
                     <div class="move_main_info">
                         <div class="move_main_info_up">
