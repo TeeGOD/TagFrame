@@ -84,11 +84,6 @@ def parse_move(move_str):
             others = []
 
             for c in components:
-                if c == 'qcf':
-                    directions.append('d df f')
-                elif c == 'qcb':
-                    directions.append('d db b')
-
                 if '/' in c:  # merge directional inputs
                     dirs = c.split('/')
                     directions.append(''.join(d.upper() for d in dirs))
