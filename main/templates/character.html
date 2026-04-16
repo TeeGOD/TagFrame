@@ -22,161 +22,164 @@
 </header>
 <body>
     <div id="glossary_div_container">
-        <div id="glossary_div">
-            <h1 class="glossary_content">This is a glossary of all the lingo and signs and what they mean.</h1>  
-            <table>
-                <thead style="background-color: #222222;"> 
-                    <tr style="display: flex; flex-direction: row; justify-content: space-around;" colspan="2">
-                        <th scope="col"><h3>Key's signs</h3></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row" style="display: flex; flex-direction: row;">
-                            <img class="glossary_content_img" src="{% static 'keys/1.png' %}" alt="">            
-                            <img class="glossary_content_img" src="{% static 'keys/2.png' %}" alt="">
-                            <img class="glossary_content_img" src="{% static 'keys/3.png' %}"  alt="">
-                            <img class="glossary_content_img" src="{% static 'keys/4.png' %}"  alt="">
-                        </th>
-                        <td>
-                            <p>Signs on your punch and kicks called in order,<br> 1,2,3,4 each reprensenting a limb</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" style="display: flex; flex-direction: row;">
-                            <img class="glossary_content_img" src="{% static 'keys/f.png' %}"  alt="">
-                            <img class="glossary_content_img" src="{% static 'keys/df.png' %}"  alt="">
-                        </th>
-                        <td>
-                            <p>Directions pressed, clicked fast</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" style="display: flex; flex-direction: row;">
-                            <img class="glossary_content_img" src="{% static 'keys/fhold.png' %}"  alt="">        
-                            <img class="glossary_content_img" src="{% static 'keys/dfhold.png' %}"  alt="">
-                        </th>
-                        <td>
-                            <p>Directions pressed, held</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" style="display: flex; flex-direction: row;"> 
-                            <img class="glossary_content_img" src="{% static 'keys/bracketl.png' %}"  alt="">
-                            <img class="glossary_content_img" src="{% static 'keys/bracketr.png' %}"  alt="">
-                        </th>
-                        <td>
-                            <p>Anything in brackets means it's pressed in quick succession,<br> also written with ~ between the keys</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">
-                            <p class="glossary_content">WS</p>        
-                        </td>
-                        <td>
-                            <p>While Standing</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">
-                            <p class="glossary_content">WR</p>        
-                        </td>
-                        <td>
-                            <p>While Running also FFF</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">
-                            <p class="glossary_content">CD</p>
-                        </td>
-                        <td>
-                            <p>Crouch Dash</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">
-                            <p class="glossary_content">SNK</p>
-                        </td>
-                        <td>    
-                            <p>Sneak</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">
-                            <p class="glossary_content">QCF, QCB</p>
-                        </td>
-                        <td>
-                            <p>Quarter Circle Forward/Back</p>
-                        </td>
-                    </tr>
+        <div id="css_is_terrible">
+                <div id="glossary_div">
+                
+                <h1 class="glossary_content">This is a glossary of all the lingo and signs and what they mean.</h1>  
+                <table style="width: 100%;">
+                    <thead style="background-color: #222222; width: 100%;"> 
+                        <tr style="display: flex; flex-direction: row; justify-content: space-around;" colspan="2">
+                            <th scope="col"><h3>Key's signs</h3></th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         <tr>
-
+                            <th scope="row" style="display: flex; flex-direction: row;">
+                                <img class="glossary_content_img" src="{% static 'keys/1.png' %}" alt="">            
+                                <img class="glossary_content_img" src="{% static 'keys/2.png' %}" alt="">
+                                <img class="glossary_content_img" src="{% static 'keys/3.png' %}"  alt="">
+                                <img class="glossary_content_img" src="{% static 'keys/4.png' %}"  alt="">
+                            </th>
+                            <td>
+                                <p>Signs on your punch and kicks called in order,<br> 1,2,3,4 each reprensenting a limb</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="display: flex; flex-direction: row;">
+                                <img class="glossary_content_img" src="{% static 'keys/f.png' %}"  alt="">
+                                <img class="glossary_content_img" src="{% static 'keys/df.png' %}"  alt="">
+                            </th>
+                            <td>
+                                <p>Directions pressed, clicked fast</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="display: flex; flex-direction: row;">
+                                <img class="glossary_content_img" src="{% static 'keys/fhold.png' %}"  alt="">        
+                                <img class="glossary_content_img" src="{% static 'keys/dfhold.png' %}"  alt="">
+                            </th>
+                            <td>
+                                <p>Directions pressed, held</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="display: flex; flex-direction: row;"> 
+                                <img class="glossary_content_img" src="{% static 'keys/bracketl.png' %}"  alt="">
+                                <img class="glossary_content_img" src="{% static 'keys/bracketr.png' %}"  alt="">
+                            </th>
+                            <td>
+                                <p>Anything in brackets means it's pressed in quick succession,<br> also written with ~ between the keys</p>
+                            </td>
+                        </tr>
+                        <tr>
                             <td scope="row">
-                                <p class="glossary_content">HCF, HCB</p>
+                                <p class="glossary_content">WS</p>        
                             </td>
                             <td>
-                                <p>Half Circle Forward/Back</p>
+                                <p>While Standing</p>
                             </td>
                         </tr>
-                        <tr  style="background-color: #222222; display: flex; flex-direction: row; justify-content: center;" colspan="2">
-                            <th scope="row" colspan="2" style="display: flex; flex-direction: row;"> 
-                                <h3>status effects</h3>
-                            </th>
+                        <tr>
+                            <td scope="row">
+                                <p class="glossary_content">WR</p>        
+                            </td>
+                            <td>
+                                <p>While Running also FFF</p>
+                            </td>
                         </tr>
-                    <tr>
+                        <tr>
+                            <td scope="row">
+                                <p class="glossary_content">CD</p>
+                            </td>
+                            <td>
+                                <p>Crouch Dash</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                <p class="glossary_content">SNK</p>
+                            </td>
+                            <td>    
+                                <p>Sneak</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                <p class="glossary_content">QCF, QCB</p>
+                            </td>
+                            <td>
+                                <p>Quarter Circle Forward/Back</p>
+                            </td>
+                        </tr>
+                            <tr>
 
-                        <th scope="row">
-                            <img class="glossary_content_img" src="{% static 'status/bound.png' %}"  alt="">
-                        </th>
-                        <td>
-                            <p>Bound, slames the opponent to the ground allowing you to keep your combo going.</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <img class="glossary_content_img" src="{% static 'status/forcecrouch.png' %}"  alt="">
-                        </th>
-                        <td>
-                            <p>Force Crouch, forces the opponent to be in a crouching state giving you better frame advantage</p>
-                        </td>
-                    </tr>
-                    <tr>
+                                <td scope="row">
+                                    <p class="glossary_content">HCF, HCB</p>
+                                </td>
+                                <td>
+                                    <p>Half Circle Forward/Back</p>
+                                </td>
+                            </tr>
+                            <tr  style="background-color: #222222; display: flex; justify-content: center; align-items: center;  width: 100%;">
+                                <th scope="row" colspan="2" style="display: flex; flex-direction: row;"> 
+                                    <h3>status effects</h3>
+                                </th>
+                            </tr>
+                        <tr>
 
-                        <th scope="row">
-                            <img class="glossary_content_img" src="{% static 'status/homing.png' %}"  alt="">
-                        </th>
-                        <td>
-                            <p>Homing, homes unto the opponent side movement also called tracking</p>
-                        </td>
-                    </tr>
-                    <tr>
+                            <th scope="row">
+                                <img class="glossary_content_img" src="{% static 'status/bound.png' %}"  alt="">
+                            </th>
+                            <td>
+                                <p>Bound, slames the opponent to the ground allowing you to keep your combo going.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <img class="glossary_content_img" src="{% static 'status/forcecrouch.png' %}"  alt="">
+                            </th>
+                            <td>
+                                <p>Force Crouch, forces the opponent to be in a crouching state giving you better frame advantage</p>
+                            </td>
+                        </tr>
+                        <tr>
 
-                        <th scope="row">
-                            <img class="glossary_content_img" src="{% static 'status/floorbreak.png' %}"  alt="">
-                        </th>
-                        <td>
-                            <p>FloorBreak, allows you to break the floor on the maps that have Breakable floors, uses your Bound</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <img class="glossary_content_img" src="{% static 'status/wallbreak.png' %}"  alt="">
-                        </th>
-                        <td>
-                            <p>WallBreak, allows you to break the wall on the maps that have Breakable walls, uses your Bound</p>
-                        </td>
-                    </tr>
-                    <tr>
+                            <th scope="row">
+                                <img class="glossary_content_img" src="{% static 'status/homing.png' %}"  alt="">
+                            </th>
+                            <td>
+                                <p>Homing, homes unto the opponent side movement also called tracking</p>
+                            </td>
+                        </tr>
+                        <tr>
 
-                        <th scope="row">
-                            <img class="glossary_content_img" src="{% static 'status/balconybreak.png' %}"  alt="">
-                        </th>
-                        <td>
-                            <p>BalconyBreak, allows you to break the balcony on the maps that have Breakable balconies, uses your Bound</p>
-                        </td>
-                    </tr>
-                </tbody>
-                </table>
+                            <th scope="row">
+                                <img class="glossary_content_img" src="{% static 'status/floorbreak.png' %}"  alt="">
+                            </th>
+                            <td>
+                                <p>FloorBreak, allows you to break the floor on the maps that have Breakable floors, uses your Bound</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <img class="glossary_content_img" src="{% static 'status/wallbreak.png' %}"  alt="">
+                            </th>
+                            <td>
+                                <p>WallBreak, allows you to break the wall on the maps that have Breakable walls, uses your Bound</p>
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <th scope="row">
+                                <img class="glossary_content_img" src="{% static 'status/balconybreak.png' %}"  alt="">
+                            </th>
+                            <td>
+                                <p>BalconyBreak, allows you to break the balcony on the maps that have Breakable balconies, uses your Bound</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -184,49 +187,50 @@
     <div id="card_container">
         <div id = "move_cards">
         {% for move in moves_list %}
-            <div class="move_card">
-                <div id="key_div">
-                    {% if move.move_name%}
+            <div data-moveid="{{ move.move_id }}" class="move_card">
+                
+                    <div id="key_div">
+                        {% if move.move_name%}
                         <p class="move_name">{{ move.move_name }}</p>
-                    {%  endif %}
-                    <div class="keys_img_div">
-                        {% for key_group in move.move %}
+                        {%  endif %}
+                        <div class="keys_img_div">
+                            {% for key_group in move.move %}
                             {% if key_group|length > 1 %}
-                                {% for key in key_group %}
-                                    <img src="{% static 'keys/'|add:key|add:'.png' %}" alt="{{ key }}" style="width: 35px; height: 35px;">
-                                {% endfor %}
+                            {% for key in key_group %}
+                            <img src="{% static 'keys/'|add:key|add:'.png' %}" alt="{{ key }}" style="width: 35px; height: 35px;">
+                            {% endfor %}
                             {% else %}
-                                <img src="{% static 'keys/'|add:key_group.0|add:'.png' %}" alt="{{ key_group.0 }}" style="width: 35px; height: 35px;">
+                            <img src="{% static 'keys/'|add:key_group.0|add:'.png' %}" alt="{{ key_group.0 }}" style="width: 35px; height: 35px;">
                             {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-                <div>
-                    <img src="{% static 'images/move_cards/img/thumbnail_'|add:character_raw|add:'.webp'%}" onerror="this.src='{% static 'images/move_cards/img/thumbnail_placeholder.webp' %}';" style="width: 640px; height:360px">
-                </div>
-                <div class="move_main_info">
-                    <div class="move_main_info_up">
-
-                        {% if move.startup %}
-                            <p class="main_info_txt">{{ move.startup}} Start&nbsp</p>
-                        {% endif %}
-
-                        {% if move.hit_type %}
-                            <p class="main_info_txt"> {{ move.hit_type }}</p>
-                        {% endif %}
+                            {% endfor %}
                         </div>
-
-                    <div class="move_main_info_down">
-                        {% if move.block %}
-                            <p class="main_info_txt">{{ move.block }} On Block&nbsp</p>
-                        {% endif %}
-
-                        {% if move.hit %}
-                            <p class="main_info_txt">{{ move.hit }} On Hit&nbsp</p>
-                        {% endif %}
-
                     </div>
-                </div>
+                    <div>
+                        <img src="{% static 'images/move_cards/img/thumbnail_'|add:character_raw|add:'.webp'%}" onerror="this.src='{% static 'images/move_cards/img/thumbnail_placeholder.webp' %}';" style="width: 640px; height:360px">
+                    </div>
+                    <div class="move_main_info">
+                        <div class="move_main_info_up">
+                            
+                            {% if move.startup %}
+                            <p class="main_info_txt">{{ move.startup}} Start&nbsp</p>
+                            {% endif %}
+                            
+                            {% if move.hit_type %}
+                            <p class="main_info_txt"> {{ move.hit_type }}</p>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="move_main_info_down">
+                            {% if move.block %}
+                            <p class="main_info_txt">{{ move.block }} On Block&nbsp</p>
+                            {% endif %}
+                            
+                            {% if move.hit %}
+                            <p class="main_info_txt">{{ move.hit }} On Hit&nbsp</p>
+                            {% endif %}
+                            
+                        </div>
+                    </div>
             </div>
             
         {% endfor %}
