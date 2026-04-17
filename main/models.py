@@ -32,6 +32,19 @@ class FrameData(models.Model):
     notes = models.TextField(null=True, blank=True)
     move_name = models.TextField(null=True, blank=True)
     condition = models.TextField(null=True, blank=True)
+    WS = models.BooleanField(default=False)
+    SS = models.BooleanField(default=False)
+    BT = models.BooleanField(default=False)
+    P1_Grounded = models.BooleanField(default=False)
+    P2_Grounded = models.BooleanField(default=False)
+    Homing = models.BooleanField(default=False)
+    FloorBreak = models.BooleanField(default=False)
+    WallBreak = models.BooleanField(default=False)
+    BalconyBreak = models.BooleanField(default=False)
+    Bound = models.BooleanField(default=False)
+    ForceCrouch = models.BooleanField(default=False)
+    Throw = models.BooleanField(default=False)
+    # TagLuncher = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.character.name} - {self.move}"

@@ -30,7 +30,7 @@ def character(request):
     if character == "random":
         return redirect(f"/character?character={random.choice(character_list).name}")
         
-    framedata = FrameData.objects.filter(character__name=character)
+    framedata = FrameData.objects.filter(character__name=character).order_by('move')
     moves_list = []
 
     for move in framedata:
@@ -57,6 +57,12 @@ def character(request):
 def move_detail(request, move_id):
     move = get_object_or_404(FrameData, id=move_id)
     return JsonResponse({
+        "hit_type": move.hit_type,
+        "damage": move.damage,
+        "startup": move.startup,
+        "block": move.block,
+        "hit": move.hit,
+        "move_name": move.move_name,
         "counter_hit": move.counter_hit,
         "condition": move.condition,
         "notes": move.notes,
