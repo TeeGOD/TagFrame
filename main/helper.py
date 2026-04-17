@@ -37,18 +37,12 @@ def matches_move_search(move_text, search_text):
 
 
 def parse_move(move_str):
-    # Parse Tekken move strings into a list of display elements.
-    #       Handles:
-    # - ',' separates moves
-    # - '~' wraps in brackets
-    # - '/' merges directional inputs
-    # - '+' splits directional inputs from numbers if needed
-    # - Text labels (WS, FC, SS) stay as text
-    # - Multi-button combos stay combined
+    STANCE = {"WS", "SS", "BT"}
+    DIRECTIONS = {"U", "D", "F", "B", "UF", "UB", "DF", "DB"}
+    QCF = ["D", "DF", "F"]
+    QCB = ["D", "DB", "B"]
 
-    TEXT_LABELS = {"WS", "FC", "SS"}
     result = []
-
     parts = [p.strip() for p in move_str.split(',') if p.strip()]
 
     for part in parts:
@@ -56,9 +50,7 @@ def parse_move(move_str):
         if '~' in part:
             bracket_group = ['bracketl']
             for sp in part.split('~'):
-                # parse subpart normally
                 sub_result = parse_move(sp)
-                # flatten single-element sublists
                 for elem in sub_result:
                     if isinstance(elem, list) and len(elem) == 1:
                         bracket_group.append(elem[0])
@@ -68,26 +60,71 @@ def parse_move(move_str):
             result.append(bracket_group)
             continue
 
-        # Normal part
         tokens = part.split()
         combined_tokens = []
+        i = 0
 
-        for token in tokens:
+        while i < len(tokens):
+            token = tokens[i]
+
+            # Handle qcf / qcb shorthand
+            if token.lower() == 'qcf':
+                combined_tokens.extend(QCF)
+                i += 1
+                continue
+            if token.lower() == 'qcb':
+                combined_tokens.extend(QCB)
+                i += 1
+                continue
+
+            # Handle qcf+ or qcb+
+            if token.lower().startswith('qcf+'):
+                combined_tokens.extend(QCF)
+                remainder = token[4:]
+                if remainder:
+                    combined_tokens.append(remainder)
+                i += 1
+                continue
+            if token.lower().startswith('qcb+'):
+                combined_tokens.extend(QCB)
+                remainder = token[4:]
+                if remainder:
+                    combined_tokens.append(remainder)
+                i += 1
+                continue
+
+            # Handle DB Errors (When hit, ...)
+            if token.startswith('(') and token.endswith(')'):
+                combined_tokens.append(token)
+                i += 1
+                continue
+
+            if token == 'When' and i + 2 < len(tokens) and tokens[i+1] == 'hit':
+                combined_tokens.append(f"When hit {tokens[i+2]}")
+                i += 3
+                continue
+
+            if token == 'Any' and i + 1 < len(tokens) and tokens[i+1] == 'button':
+                combined_tokens.append('Any button')
+                i += 2
+                continue
+
             components = token.split('+')
 
-            # If first component is a text label, keep as text
-            if components[0].upper() in TEXT_LABELS:
-                combined_tokens.append(components[0].upper())
+            leading_labels = []
+            while components and components[0].upper() in STANCE:
+                leading_labels.append(components[0].upper())
                 components = components[1:]
+            combined_tokens.extend(leading_labels)
 
             directions = []
             others = []
 
             for c in components:
-                if '/' in c:  # merge directional inputs
+                if '/' in c:
                     dirs = c.split('/')
                     directions.append(''.join(d.upper() for d in dirs))
-                elif c.upper() in {'U','D','F','B'}:
+                elif c.upper() in DIRECTIONS:
                     directions.append(c.upper())
                 else:
                     others.append(c)
@@ -95,6 +132,8 @@ def parse_move(move_str):
             combined_tokens.extend(directions)
             if others:
                 combined_tokens.append('+'.join(others))
+
+            i += 1
 
         if combined_tokens:
             result.append(combined_tokens)
