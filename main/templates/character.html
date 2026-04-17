@@ -3,7 +3,6 @@
 <html lang="en">
     <link rel="stylesheet" href="{% static 'style/style.css' %}">  
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.svg' %}">
-    <link rel="preload" href="{%static 'style/bebas_regular.ttf'%}">
 <head>
     <title>Moves of {{character_name}}</title>
 </head>
@@ -183,7 +182,21 @@
             </div>
         </div>
     </div>
+
+    <div id="move_detail_div_container">
+        <div id="css_is_terrible">
+            <div id="move_detail_div">
+                <div id="move_detail_left" style="width: 60%; height:90%">
+                    <div id="move_detail_video_container"></div>
+                </div>
+                <div id="move_detail_right" style="border-left: solid; border-left-color: #d1d1d1; width: 40%; height:90%;">
+
+                </div>
+            </div>
+        </div>
+    </div>
     
+
     <div id="card_container">
         <div id = "move_cards">
         {% for move in moves_list %}
@@ -206,7 +219,7 @@
                         </div>
                     </div>
                     <div>
-                        <img src="{% static 'images/move_cards/img/thumbnail_'|add:character_raw|add:'.webp'%}" onerror="this.src='{% static 'images/move_cards/img/thumbnail_placeholder.webp'|lower %}';" style="width: 640px; height:360px">
+                        <img src="{% static 'images/move_cards/img/thumbnail_'|add:character_raw|add:'.webp'|lower%}" onerror="this.src='{% static 'images/move_cards/img/thumbnail_placeholder.webp'|lower %}';" style="width: 640px; height:360px">
                     </div>
                     <div class="move_main_info">
                         <div class="move_main_info_up">

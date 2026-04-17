@@ -1,9 +1,16 @@
 var IsGlossaryOpen = false;
+var IsMoveDetailOpen = false;
 
 window.onload = () => {
   const glossary_btn = document.querySelector(".glossary_btn");
   const glossary_div = document.querySelector("#glossary_div");
   const glossary_div_container = document.querySelector("#glossary_div_container");
+
+  const move_cards = document.querySelectorAll(".move_card");
+  
+  const move_detail_div = document.querySelector("#move_detail_div");
+  const move_detail_div_container = document.querySelector("#move_detail_div_container");
+
   const search_bar = document.querySelector("#move_search");
   const search_bar_btn = document.querySelector("#search_button_img")
   var character_name = search_bar.dataset.charactername
@@ -24,7 +31,18 @@ window.onload = () => {
   glossary_div_container.addEventListener("click", function(){
     ToggleGlossary()
   })
+
+  move_cards.forEach( move_card=>{
+    move_card.addEventListener("click", function(){
+      ToggleMoveDetail();
+      GetMoveDetail(this.dataset.moveid);
+      // console.log(this.dataset.moveid);
+    })
+  })
+
 }
+
+//All functions
 
 // function to open and close the glossary
 ToggleGlossary = function(){
@@ -33,21 +51,40 @@ ToggleGlossary = function(){
         glossary_div.style.display='flex';
         glossary_div_container.style.display='flex';
         document.body.style.overflow = 'hidden'
-        // disableScroll();
       }else{
         IsGlossaryOpen = false;
         glossary_div.style.display='none';
         glossary_div_container.style.display='none';
         document.body.style.overflow = 'visible'
-        // enableScroll();
     }
 
+}
+
+ToggleMoveDetail = function(){
+  if(IsMoveDetailOpen == false){
+    IsMoveDetailOpen = true;
+    move_detail_div.style.display='flex';
+    move_detail_div_container.style.display='flex';
+    document.body.style.overflow = 'hidden'
+  }else{
+    IsMoveDetailOpen = false;
+    move_detail_div.style.display='none';
+    move_detail_div_container.style.display='none';
+    document.body.style.overflow = 'visible'
+  }
 }
 
 search_bar_reload = function(){
   if(event.key === 'Enter') {
   window.location.reload();
   }
+}
+
+function GetMoveDetail(moveId){
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open( "GET", "../move/"+moveId, true ); // false for synchronous request
+  xmlHttp.send( null );
+  return xmlHttp.responseText;
 }
 
 // // locking scroll functions
