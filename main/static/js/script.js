@@ -29,10 +29,10 @@ window.onload = () => {
 // function for the search bar, the logic for the search is handled in python. at view.py
     search_bar.addEventListener("keyup", function(){
       if(search_bar.value != ""){
-      window.history.pushState(null, document.title, "?character=" + character_name + "&search=" + search_bar.value);
+        window.history.pushState(null, document.title, "?character=" + character_name + "&search=" + search_bar.value);
       }else{
-      window.history.pushState(null, document.title, "?character=" + character_name);
-      window.location.reload();
+        window.history.pushState(null, document.title, "?character=" + character_name);
+        window.location.reload();
       }
   })
 
@@ -40,12 +40,13 @@ window.onload = () => {
   move_cards.forEach( move_card=>{
     move_card.addEventListener("click", function(){
       ToggleMoveDetail();
-      var moveDetails = getMoveDetail(this.dataset.moveid);
-      console.log(moveDetails);
-      // var moveDetailsParsed = JSON.parse(moveDetails);
-      // moveDetailsParsed.forEach(moveDetail => {
-      //  move_detail_div_right.append(document.CreateElement("p").innerText=moveDetail)
-      // });
+      var moveDetails = getMoveDetail(this.dataset.moveid).then(moveDetails => {
+        Object.entries(moveDetails).forEach(moveDetail => {
+          // move_detail_div_right.append(document.CreateElement("p"))
+          console.log(moveDetail)
+        });
+      })
+       
     })
   })
 }
@@ -89,47 +90,9 @@ search_bar_reload = function(){
 }
 
 async function getMoveDetail(moveId){
-  var moveDetails = await fetch("/move/"+moveId).
-    then(response => response.json()).
-    then((data) => data.value)
+  var moveDetails = await fetch("/move/"+moveId)
+  var data = await moveDetails.json()
+      // then(response => response.json())
     
-  return moveDetails
+  return data
 }
-
-// // locking scroll functions
-// // left: 37, up: 38, right: 39, down: 40,
-// // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-// var keys = {37: 1, 38: 1, 39: 1, 40: 1};
-
-// function preventDefault(e) {
-//   e.preventDefault();
-// }
-// function preventDefaultForScrollKeys(e) {
-//     if (keys[e.keyCode]) {
-//         preventDefault(e);
-//         return false;
-//     }
-// }
-// var supportsPassive = false;
-// try {
-//   window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-//     get: function () { supportsPassive = true; } 
-//   }));
-// } catch(e) {}
-// var wheelOpt = supportsPassive ? { passive: false } : false;
-// var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
-// // call this to Disable
-// function disableScroll() {
-//   window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-//   window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-//   window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-//   // document.body.style.overflow = 'hidden';
-// }
-// // call this to Enable
-// function enableScroll() {
-//   window.removeEventListener('DOMMouseScroll', preventDefault, false);
-//   window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
-//   window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
-//   // document.body.style.overflow = 'visible';
-
-// }
