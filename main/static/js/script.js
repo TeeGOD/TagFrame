@@ -16,6 +16,7 @@ window.onload = () => {
   var character_name = search_bar.dataset.charactername
 
   glossary_btn.addEventListener("click", function(){ToggleGlossary();})  
+  move_detail_div_container.addEventListener("click", function(){ToggleMoveDetail();})
   search_bar_btn.addEventListener("click", function(){window.location.reload();})
 
 // function for the search bar, the logic for the search is handled in python. at view.py
