@@ -10,14 +10,21 @@ window.onload = () => {
   
   const move_detail_div = document.querySelector("#move_detail_div");
   const move_detail_div_container = document.querySelector("#move_detail_div_container");
+  const move_detail_div_right = document.querySelector(".move_detail_div_right")
 
   const search_bar = document.querySelector("#move_search");
   const search_bar_btn = document.querySelector("#search_button_img")
   var character_name = search_bar.dataset.charactername
 
-  glossary_btn.addEventListener("click", function(){ToggleGlossary();})  
-  move_detail_div_container.addEventListener("click", function(){ToggleMoveDetail();})
+  glossary_btn.addEventListener("click", function(){ToggleGlossary();}) 
   search_bar_btn.addEventListener("click", function(){window.location.reload();})
+
+  glossary_div_container.addEventListener("click", function(){ToggleGlossary();})
+  glossary_div.addEventListener("click", function(){event.stopPropagation();})
+
+  move_detail_div_container.addEventListener("click", function(){ToggleMoveDetail();})
+  move_detail_div.addEventListener("click", function(){event.stopPropagation();})
+
 
 // function for the search bar, the logic for the search is handled in python. at view.py
     search_bar.addEventListener("keyup", function(){
@@ -29,18 +36,18 @@ window.onload = () => {
       }
   })
 
-  glossary_div_container.addEventListener("click", function(){
-    ToggleGlossary()
-  })
-
+// function for 
   move_cards.forEach( move_card=>{
     move_card.addEventListener("click", function(){
       ToggleMoveDetail();
-      GetMoveDetail(this.dataset.moveid);
-      // console.log(this.dataset.moveid);
+      var moveDetails = getMoveDetail(this.dataset.moveid);
+      console.log(moveDetails);
+      // var moveDetailsParsed = JSON.parse(moveDetails);
+      // moveDetailsParsed.forEach(moveDetail => {
+      //  move_detail_div_right.append(document.CreateElement("p").innerText=moveDetail)
+      // });
     })
   })
-
 }
 
 //All functions
@@ -81,11 +88,12 @@ search_bar_reload = function(){
   }
 }
 
-function GetMoveDetail(moveId){
-  var xmlHttp = new XMLHttpRequest();
-  xmlHttp.open( "GET", "../move/"+moveId, true ); // false for synchronous request
-  xmlHttp.send( null );
-  return xmlHttp.responseText;
+async function getMoveDetail(moveId){
+  var moveDetails = await fetch("/move/"+moveId).
+    then(response => response.json()).
+    then((data) => data.value)
+    
+  return moveDetails
 }
 
 // // locking scroll functions

@@ -303,6 +303,7 @@ display: none;
 
 #move_detail_div{
     display: none;
+    justify-content: center;
     position: inherit;
     height: 100%;
     flex-direction: row;
@@ -315,6 +316,7 @@ display: none;
 
 #move_detail_video_container{
     display: flex;
+    justify-content: center;
     height: 50%;
     width: 90%;
     background-color: #141414;
@@ -337,8 +339,6 @@ display: none;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 }
-
-
 
 .glossary_text_div{
     font-size: 40px;
