@@ -62,7 +62,6 @@ def move_detail(request, move_id):
         "startup": move.startup,
         "block": move.block,
         "hit": move.hit,
-        "move_name": move.move_name,
         "counter_hit": move.counter_hit,
         "condition": move.condition,
         "notes": move.notes,
