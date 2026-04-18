@@ -379,7 +379,9 @@ table{
     justify-content: center;
     align-items: center;
     width: fit-content;
-   margin-bottom: 20px
+   margin-bottom: 20px;
+    color: white;
+
 }
 
 tbody{
