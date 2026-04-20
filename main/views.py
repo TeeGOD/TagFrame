@@ -25,12 +25,23 @@ def character(request):
     character_list = Characters.objects.all()
     character = request.GET.get("character")
     search = request.GET.get("search", "").strip()
-    
+    conditions = request.GET.get("condition", "").strip()
     # If the character is "random", redirect to a random character page
     if character == "random":
         return redirect(f"/character?character={random.choice(character_list).name}")
-        
-    framedata = FrameData.objects.filter(character__name=character).order_by('move')
+    if conditions:
+        conditions = conditions.split(",")
+    
+    
+    # Handle Filter possible inputs are :
+    # WS, SS, BT, P1_Grounded, P2_Grounded, Homing, FloorBreak, WallBreak, BalconyBreak, Bound, ForceCrouch, Throw
+    filter_kwargs = {"character__name" : character}
+    
+    for cond in conditions:
+        filter_kwargs[cond] = True
+    
+    framedata = FrameData.objects.filter(**filter_kwargs).order_by('move')
+
     moves_list = []
 
     for move in framedata:
@@ -54,6 +65,8 @@ def character(request):
         "character_raw": character,
     })
 
+
+# Gives details about a special move (move_id)
 def move_detail(request, move_id):
     move = get_object_or_404(FrameData, id=move_id)
     return JsonResponse({
