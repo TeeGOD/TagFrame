@@ -23,48 +23,59 @@
     <div id="glossary_div_container">
         <div id="css_is_terrible">
                 <div id="glossary_div">
-                
-                <h1 class="glossary_content">This is a glossary of all the lingo and signs and what they mean.</h1>  
                 <table style="width: 100%;">
-                    <thead style="background-color: #222222; width: 100%;"> 
-                        <tr style="display: flex; flex-direction: row; justify-content: space-around;" colspan="2">
-                            <th scope="col"><h3>Key's signs</h3></th>
+                    <thead style="background-color: #222222; width: 100%; margin-bottom: 15px; padding-bottom: 5px; padding-top: 5px;"> 
+                        <tr style="display: flex; justify-content: space-around;" colspan="2">
+                            <th scope="col" style="display: flex; text-align: center; vertical-align: middle;"><h1 class="glossary_content" style="padding: 0px;">This is a glossary of all the lingo and signs and what they mean.</h1></th>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr  style="background-color: #222222; display: flex; justify-content: center; align-items: center;  width: 100%;">
+                                <th scope="row" colspan="2" style="display: flex; flex-direction: row;"> 
+                                    <h3>keys</h3>
+                                </th>
+                            </tr>
                         <tr>
-                            <th scope="row" style="display: flex; flex-direction: row;">
-                                <img class="glossary_content_img" src="{% static 'keys/1.png' %}" alt="">            
-                                <img class="glossary_content_img" src="{% static 'keys/2.png' %}" alt="">
-                                <img class="glossary_content_img" src="{% static 'keys/3.png' %}"  alt="">
-                                <img class="glossary_content_img" src="{% static 'keys/4.png' %}"  alt="">
+                            <th scope="row" style="display: flex; flex-direction: row; justify-content: center;">
+                                <div style="display: flex; flex-direction: row;">
+                                    <img class="glossary_content_img" src="{% static 'keys/1.png' %}" alt="">            
+                                    <img class="glossary_content_img" src="{% static 'keys/2.png' %}" alt="">
+                                    <img class="glossary_content_img" src="{% static 'keys/3.png' %}"  alt="">
+                                    <img class="glossary_content_img" src="{% static 'keys/4.png' %}"  alt="">
+                                </div>
                             </th>
                             <td>
                                 <p>punches and kicks named respectively 1,2,3,4 <br>each representing a limb</p>
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row" style="display: flex; flex-direction: row;">
-                                <img class="glossary_content_img" src="{% static 'keys/f.png' %}"  alt="">
-                                <img class="glossary_content_img" src="{% static 'keys/df.png' %}"  alt="">
+                            <th scope="row" style="display: flex; flex-direction: row; justify-content: center;">
+                                <div style="display: flex; flex-direction: row;">
+                                    <img class="glossary_content_img" src="{% static 'keys/f.png' %}"  alt="">
+                                    <img class="glossary_content_img" src="{% static 'keys/df.png' %}"  alt="">
+                                </div>
                             </th>
                             <td>
                                 <p>Directions pressed, clicked fast</p>
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row" style="display: flex; flex-direction: row;">
-                                <img class="glossary_content_img" src="{% static 'keys/fhold.png' %}"  alt="">        
-                                <img class="glossary_content_img" src="{% static 'keys/dfhold.png' %}"  alt="">
+                            <th scope="row" style="display: flex; flex-direction: row; justify-content: center;">
+                                <div style="display: flex; flex-direction: row;">
+                                    <img class="glossary_content_img" src="{% static 'keys/fhold.png' %}"  alt="">        
+                                    <img class="glossary_content_img" src="{% static 'keys/dfhold.png' %}"  alt="">
+                                </div>
                             </th>
                             <td>
                                 <p>Directions pressed, held</p>
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row" style="display: flex; flex-direction: row;"> 
-                                <img class="glossary_content_img" src="{% static 'keys/bracketl.png' %}"  alt="">
-                                <img class="glossary_content_img" src="{% static 'keys/bracketr.png' %}"  alt="">
+                            <th scope="row" style="display: flex; flex-direction: row; justify-content: center;"> 
+                                <div style="display: flex; flex-direction: row;">
+                                    <img class="glossary_content_img" src="{% static 'keys/bracketl.png' %}"  alt="">
+                                    <img class="glossary_content_img" src="{% static 'keys/bracketr.png' %}"  alt="">
+                                </div>
                             </th>
                             <td>
                                 <p>Anything in brackets means it's pressed in quick succession,<br> also written with ~ between the keys</p>
@@ -75,7 +86,7 @@
                                 <p class="glossary_content">WS</p>        
                             </td>
                             <td>
-                                <p>While Standing</p>
+                                <p>While Standing,<br> used to be While Rising but fell out of use for clarity with While Running</p>
                             </td>
                         </tr>
                         <tr>
@@ -127,7 +138,9 @@
                         <tr>
 
                             <th scope="row">
-                                <img class="glossary_content_img" src="{% static 'status/bound.png' %}"  alt="">
+                                <div style="width: 196px; display: flex; justify-content: center;">
+                                    <img class="glossary_content_img" src="{% static 'status/bound.png' %}"  alt="">
+                                </div>
                             </th>
                             <td>
                                 <p>Bound, slams the opponent to the ground allowing you to keep your juggle</p>
@@ -135,7 +148,9 @@
                         </tr>
                         <tr>
                             <th scope="row">
-                                <img class="glossary_content_img" src="{% static 'status/forcecrouch.png' %}"  alt="">
+                                <div style="width: 196px; display: flex; justify-content: center;">
+                                    <img class="glossary_content_img" src="{% static 'status/forcecrouch.png' %}"  alt="">
+                                </div>
                             </th>
                             <td>
                                 <p>Force Crouch, forces the opponent to be crouching giving you better frames</p>
@@ -144,7 +159,9 @@
                         <tr>
 
                             <th scope="row">
-                                <img class="glossary_content_img" src="{% static 'status/homing.png' %}"  alt="">
+                                <div style="width: 196px; display: flex; justify-content: center;">
+                                    <img class="glossary_content_img" src="{% static 'status/homing.png' %}"  alt="">
+                                </div>
                             </th>
                             <td>
                                 <p>Homing, homes unto the opponent side movement also called tracking</p>
@@ -153,7 +170,9 @@
                         <tr>
 
                             <th scope="row">
-                                <img class="glossary_content_img" src="{% static 'status/floorbreak.png' %}"  alt="">
+                                <div style="width: 196px; display: flex; justify-content: center;">
+                                    <img class="glossary_content_img" src="{% static 'status/floorbreak.png' %}"  alt="">
+                                </div>
                             </th>
                             <td>
                                 <p>FloorBreak, breaks the floor on maps that have Breakable floors.<br> uses your Bound</p>
@@ -161,7 +180,9 @@
                         </tr>
                         <tr>
                             <th scope="row">
-                                <img class="glossary_content_img" src="{% static 'status/wallbreak.png' %}"  alt="">
+                                <div style="width: 196px; display: flex; justify-content: center;">
+                                    <img class="glossary_content_img" src="{% static 'status/wallbreak.png' %}"  alt="">
+                                </div>
                             </th>
                             <td>
                                 <p>WallBreak, breaks the wall on maps that have Breakable walls.<br> doesn't uses your Bound</p>
@@ -170,12 +191,51 @@
                         <tr>
 
                             <th scope="row">
-                                <img class="glossary_content_img" src="{% static 'status/balconybreak.png' %}"  alt="">
+                                <div style="width: 196px; display: flex; justify-content: center;">
+                                    <img class="glossary_content_img" src="{% static 'status/balconybreak.png' %}"  alt="">
+                                </div>
                             </th>
                             <td>
-                                <p>BalconyBreak, breaks the balcony on maps that have Breakable balconies.<br> uses your Bound</p>
+                                <p>Balcony Break, breaks the balcony on maps that have Breakable balconies.<br> uses your Bound</p>
                             </td>
                         </tr>
+                        <tr  style="background-color: #222222; display: flex; justify-content: center; align-items: center;  width: 100%;">
+                                <th scope="row" colspan="2" style="display: flex; flex-direction: row;"> 
+                                    <h3>other</h3>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="width: 196px; display: flex; justify-content: center;">
+                                        <p>On Block</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="width: 432.6px; display: flex; justify-content: center;">
+                                        <p >Attacks hitting the opponents Block</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="width: 196px; display: flex; justify-content: center;">
+                                        <p >On Hit</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p >Attacks that hits the Unblocking opponent</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="width: 196px; display: flex; justify-content: center;">
+                                            <p>Counter Hit </p>
+                                        </div>
+                                </td>
+                                <td>
+                                    <p>Attacks hit while the opponent is in the startup of an attack</p>
+                                </td>
+                            </tr>
                     </tbody>
                     </table>
                 </div>
