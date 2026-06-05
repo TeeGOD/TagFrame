@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
  <html lang="en">
-    <link rel="stylesheet" href="{% static 'style/style.css' %}">  
+    <link rel="stylesheet" rel="preconnect" type="text/css" href="{% static 'style/style.css' %}">  
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.svg' %}">
 <head>
     <title>TagFrame</title>
@@ -13,17 +13,19 @@
 </header>
 
 <body>
-    <div id="container">
-        <div id="btnList">
-            {% for character in character_list %}
+    <main>
+        <div id="container">
+            <div id="btnList">
+                {% for character in character_list %}
                 <button class="character_btn" style="background-color: transparent; border: none;">
                     <a class="a_main_menu" href="{% url 'character' %}?character={{ character.raw }}" style="margin: 0px">
-                        <img class="char_mugshot" src="{% static 'images/ig_render/mugshot/mugshot_'|add:character.raw|add:'.png'|lower %}" style="height:102px; width:70px">
+                        <img rel="preload" class="char_mugshot" src="{% static 'images/ig_render/mugshot/mugshot_'|add:character.raw|add:'.png'|lower %}" alt={{character.raw}} style="width:56px; height:88px">
                     </a>
                 </button>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
-    </div>
+    </main>
     <footer>
         <a href={%url 'credit'%}>credit</a>
     </footer>

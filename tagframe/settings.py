@@ -14,6 +14,10 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 
+# import mimetypes
+# mimetypes.add_type("text/css", ".css", True)
+# mimetypes.add_type("image/png", ".png", True)
+
 # Load environment variables from .env
 load_dotenv()
 
@@ -28,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", False)
+DEBUG = os.getenv("DEBUG", True)
 
 ALLOWED_HOSTS = [
     "tagframe.eu",
