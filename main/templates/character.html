@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+    <link rel="prefetch" href="{% static 'style/bebas_regular.ttf' %}" as="font" type="font/ttf" crossorigin="use-credentials">
+    <link rel="prefetch" href="{% static 'style/tarrgetchrome.ttf' %}" as="font" type="font/ttf" crossorigin="use-credentials">
     <link rel="stylesheet" href="{% static 'style/style.css' %}">  
-    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.svg' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.svg' %}"  >
 <head>
     <title>Moves of {{character_name}}</title>
 </head>
@@ -282,7 +284,9 @@
                         </div>
                     </div>
                     <div>
-                        <img src="{% static 'images/move_cards/img/thumbnail_'|add:character_raw|add:'.webp'|lower%}" onerror="this.src='{% static 'images/move_cards/img/thumbnail_placeholder.webp'|lower %}';" style="width: 640px; height:360px">
+                        <img fetchpriority="high" src="{% static 'images/move_cards/img/thumbnail_'|add:character_raw|add:'.webp'|lower%}" 
+                        alt="{{ character_raw |add:"'s thumbnail" }}"
+                            onerror="this.src='{% static 'images/move_cards/img/thumbnail_placeholder.webp'|lower %}', alt="placeholder thumbnail"; " style="width: 640px; height:360px">
                     </div>
                     <div class="move_main_info">
                         <div class="move_main_info_up">
