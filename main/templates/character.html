@@ -7,7 +7,7 @@
     <title>Moves of {{character_name}}</title>
 </head>
 <header>
-    <img id="char_cr" loading="lazy" src="{% static 'images/ig_render/cr/cr_'|add:character_raw|add:'.png'|lower%}"></img>
+    <img rel="preload" id="char_cr" src="{% static 'images/ig_render/cr/cr_'|add:character_raw|add:'.webp'|lower%}"></img>
     <p id="char_cr_name">{{character_name}}</p>
     <div id="header_btns">
         <button class="character_btn"><a href={%url 'home' %}> Main Menu </a>

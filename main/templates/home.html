@@ -19,7 +19,7 @@
                 {% for character in character_list %}
                 <button class="character_btn" style="background-color: transparent; border: none;">
                     <a class="a_main_menu" href="{% url 'character' %}?character={{ character.raw }}" style="margin: 0px">
-                        <img rel="preload" class="char_mugshot" src="{% static 'images/ig_render/mugshot/mugshot_'|add:character.raw|add:'.png'|lower %}" alt={{character.raw}} style="width:56px; height:88px">
+                        <img rel="preload" fetchpriority="high" class="char_mugshot" src="{% static 'images/ig_render/mugshot/mugshot_'|add:character.raw|add:'.webp'|lower %}" alt={{character.raw}} style="width:56px; height:88px">
                     </a>
                 </button>
                 {% endfor %}
