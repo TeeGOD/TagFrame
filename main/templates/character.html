@@ -284,9 +284,7 @@
                         </div>
                     </div>
                     <div>
-                        <img fetchpriority="high" src="{% static 'images/move_cards/img/thumbnail_'|add:character_raw|add:'.webp'|lower%}" 
-                        alt="{{ character_raw |add:"'s thumbnail" }}"
-                            onerror="this.src='{% static 'images/move_cards/img/thumbnail_placeholder.webp'|lower %}', alt="placeholder thumbnail"; " style="width: 640px; height:360px">
+                        <img fetchpriority="high" type="image/webp" src="{% static 'images/move_cards/img/thumbnail_'|add:character_raw|add:'.webp'|lower%}" alt="{{ character_raw |add:"'s thumbnail" }}" onerror="this.src='{% static 'images/move_cards/img/thumbnail_placeholder.webp'|lower %}', alt="placeholder thumbnail"; " style="width: 640px; height:360px">
                     </div>
                     <div class="move_main_info">
                         <div class="move_main_info_up">

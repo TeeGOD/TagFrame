@@ -325,6 +325,7 @@ display: none;
 }
 
 #css_is_terrible{
+    display: flex;
     width: fit-content;
     height: fit-content;
     overflow: hidden;
