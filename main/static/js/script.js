@@ -10,7 +10,8 @@ window.onload = () => {
   
   const move_detail_div = document.querySelector("#move_detail_div");
   const move_detail_div_container = document.querySelector("#move_detail_div_container");
-  const paragraphs_container = document.querySelector("#paragraphs_container")
+  const paragraphs_container = document.querySelector("#paragraphs_container");
+  const video_container = document.querySelector("#move_video")
 
   const search_bar = document.querySelector("#move_search");
   const search_bar_btn = document.querySelector("#search_button_img")
@@ -38,26 +39,33 @@ window.onload = () => {
 
 // function for 
   move_cards.forEach( move_card=>{
+    //clones the images of the button, saves on server ressources.
     move_card.addEventListener("click", function(){
       ToggleMoveDetail();
       var moveKeysDiv = move_card.children[0]
-      console.log(moveKeysDiv)
+      var InputKeys = moveKeysDiv.cloneNode(true)
       var moveDetails = getMoveDetail(this.dataset.moveid).then(moveDetails => {
-        var InputKeys = moveKeysDiv.cloneNode(true)
         InputKeys.classList.add("move_infos_var")
         InputKeys.style.color = "white"
         paragraphs_container.append(InputKeys)
-
+//Adds all of the informations about the selected move into a paragraph and styles it.
         Object.entries(moveDetails).forEach(moveDetail => {
           var paragraph = document.createElement("p")
             paragraph.classList.add("move_infos_var")
             paragraph.style.color = "white"
             paragraph.style.fontSize = "25px"
-            paragraph.innerText = moveDetail[0].replace("_", " ")+": "+moveDetail[1].replace("NULL", "").replace("KND", "Knockdown")
+            paragraph.innerText = moveDetail[0].replace("_", " ")+": "+moveDetail[0].replace("NULL", "").replace("KND", "Knockdown")
             paragraphs_container.append(paragraph)
         });
-
+//Adds the source for the video of the move.
+        var videoSource = document.createElement("source")
+        var moveid = this.dataset.moveid
+          videoSource.classList.add("video_source")
+          videoSource.src = "../static/videos/"+(moveid)+".mp4"
+          video_container.append(videoSource)
+          video_container.load()
       })
+     
        
     })
   })
@@ -81,6 +89,7 @@ ToggleGlossary = function(){
 
 }
 
+//function to open and close the details of specific moves
 ToggleMoveDetail = function(){
   if(IsMoveDetailOpen == false){
     IsMoveDetailOpen = true;
@@ -92,12 +101,16 @@ ToggleMoveDetail = function(){
     move_detail_div.style.display='none';
     move_detail_div_container.style.display='none';
     document.body.style.overflow = 'visible'
+//deletes all the moves details, the text part.
     var ElementsToDelete = document.querySelectorAll(".move_infos_var")
-    console.log(ElementsToDelete)
-    ElementsToDelete.forEach(element => {
-      element.remove()
-    });
-    
+      ElementsToDelete.forEach(element => {
+        element.remove()
+      });
+//deletes the source element (you need to videoElement.load to update the document tho)
+    var videoSourceElement = document.querySelectorAll(".video_source");
+    videoSourceElement.forEach(element => {
+      (element).remove()
+    })    
     
   }
 }
