@@ -314,18 +314,25 @@ display: none;
     background-color: transparent;
 }
 
+#move_detail_left, #move_detail_right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 #move_detail_video_container{
     display: flex;
     justify-content: center;
     height: 50%;
-    width: 90%;
+    width: 87.5%;
     background-color: #141414;
     margin-left: 30px;
     margin-right: 0px;
 }
 
 #css_is_terrible{
-    display: flex;
+    /* display: flex; */
     width: fit-content;
     height: fit-content;
     overflow: hidden;
