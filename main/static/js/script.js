@@ -44,6 +44,7 @@ window.onload = () => {
       ToggleMoveDetail();
       var moveKeysDiv = move_card.children[0]
       var InputKeys = moveKeysDiv.cloneNode(true)
+      
       var moveDetails = getMoveDetail(this.dataset.moveid).then(moveDetails => {
         InputKeys.classList.add("move_infos_var")
         InputKeys.style.color = "white"
@@ -54,7 +55,7 @@ window.onload = () => {
             paragraph.classList.add("move_infos_var")
             paragraph.style.color = "white"
             paragraph.style.fontSize = "25px"
-            paragraph.innerText = moveDetail[0].replace("_", " ")+": "+moveDetail[0].replace("NULL", "").replace("KND", "Knockdown")
+            paragraph.innerText = moveDetail[0].replace("_", " ")+": "+moveDetail[1].replace("NULL", "").replace("KND", "Knockdown")
             paragraphs_container.append(paragraph)
         });
 //Adds the source for the video of the move.
