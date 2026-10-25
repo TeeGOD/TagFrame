@@ -72,9 +72,11 @@ window.onload = () => {
 }
 
 //All functions
-
 // function to open and close the glossary
 ToggleGlossary = function(){
+  if(IsMoveDetailOpen == true){
+    ToggleMoveDetail()
+  }
     if(IsGlossaryOpen == false){
         IsGlossaryOpen = true;
         glossary_div.style.display='flex';
@@ -111,8 +113,8 @@ ToggleMoveDetail = function(){
     videoSourceElement.forEach(element => {
       (element).remove()
     })    
-    
   }
+
 }
 
 search_bar_reload = function(){
